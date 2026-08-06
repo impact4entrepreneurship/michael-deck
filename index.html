@@ -2,421 +2,474 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Michael Deck – KI-Beratung & Ausbildung für Selbstständige</title>
-<meta name="description" content="Michael Deck begleitet Selbstständige und Unternehmer im klugen Einsatz von Künstlicher Intelligenz – als persönlicher Sparringspartner und in strukturierten Ausbildungen und Kursen."><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%232f003a'/><text x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='40' fill='%23e09bd1'>M</text></svg>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michael Deck – Künstliche Intelligenz im Mittelstand</title>
+<meta name="description" content="Michael Deck bringt künstliche Intelligenz in Handwerk, Mittelstand und Schule – als Praktiker, der es im eigenen Unternehmen vormacht. Vorträge, Projektwochen, Begleitung.">
+<link rel="icon" href="images/i4e-logo.png">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
-  :root{
-    /* I4E-Design – Lila-Farbwelt */
-    --pflaume:#2f003a;
-    --pflaume-2:#22002b;
-    --violett:#5b156d;
-    --violett-2:#7a2a90;
-    --rosa:#e09bd1;
-    --rosa-soft:#f5e2f0;
-    --creme:#faf5f8;
-    --creme-2:#f4e8f1;
-    --card:#fffdff;
-    --ink:#26122e;
-    --muted:#6f6577;
-    --sage:#c9a9d4;      /* gedämpftes Lila für dunkle Flächen */
-    --gold:#e6b8dc;      /* heller Rosa-Akzent auf dunklem Grund */
-    --line:#ecdff0;
-    --line-dark:rgba(224,155,209,.22);
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    color:var(--ink);background:var(--creme);line-height:1.68;
-    -webkit-font-smoothing:antialiased;font-size:17px;
-  }
-  a{text-decoration:none;color:inherit}
-  img{max-width:100%;display:block}
-  ::selection{background:var(--rosa);color:var(--pflaume)}
+:root{
+  --tief:#2f003a; --lila-dunkel:#5b156d; --lila:#7a2a90;
+  --flieder:#cdb6d6; --flieder-hell:#ecdff0;
+  --grund:#faf5f8; --weiss:#fffdff;
+  --text:#3a2f40; --sanft:#6f6577; --signal:#00c2a8;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--text);background:var(--grund);
+  line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+:focus-visible{outline:3px solid var(--lila);outline-offset:3px;border-radius:4px;}
+.bahn{max-width:1180px;margin:0 auto;padding:0 28px;}
 
-  .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
-  .eyebrow{
-    font-family:'Inter',sans-serif;font-size:13px;font-weight:600;
-    letter-spacing:.16em;text-transform:uppercase;color:var(--violett);
-    display:inline-flex;align-items:center;gap:10px;
-  }
-  .eyebrow::before{content:"";width:26px;height:1px;background:var(--rosa)}
-  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-spacing:-.01em;line-height:1.12}
-  .serif-i{font-style:italic;font-weight:500;color:var(--violett)}
+.auge{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--lila);display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+.auge::before{content:"";width:34px;height:1px;background:var(--flieder);flex:0 0 auto;}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.14;color:var(--tief);}
+h2{font-size:clamp(29px,4vw,44px);letter-spacing:-.015em;}
+h3{font-size:19px;line-height:1.25;}
+p{font-size:17px;}
+.gross{font-size:19px;color:var(--sanft);line-height:1.7;}
 
-  /* Buttons */
-  .btn{
-    display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15.5px;
-    padding:15px 30px;border-radius:100px;transition:.22s ease;cursor:pointer;border:1px solid transparent;
-    font-family:'Inter',sans-serif;
-  }
-  .btn-primary{background:var(--violett);color:#fff}
-  .btn-primary:hover{background:var(--violett-2);transform:translateY(-2px)}
-  .btn-ghost{background:transparent;color:var(--violett);border-color:var(--line)}
-  .btn-ghost:hover{border-color:var(--violett)}
-  .btn-light{background:#fff;color:var(--violett)}
-  .btn-light:hover{transform:translateY(-2px)}
-  .btn .ar{transition:transform .22s ease}
-  .btn:hover .ar{transform:translateX(4px)}
+header{position:sticky;top:0;z-index:60;background:rgba(250,245,248,.9);
+  backdrop-filter:blur(14px);border-bottom:1px solid rgba(205,182,214,.5);}
+.kopf{display:flex;align-items:center;gap:26px;height:74px;}
+.wortmarke{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--tief);text-decoration:none;letter-spacing:-.01em;}
+.wortmarke span{color:var(--lila);}
+nav{margin-left:auto;display:flex;align-items:center;gap:26px;}
+nav a{font-size:14.5px;font-weight:500;color:var(--sanft);text-decoration:none;transition:color .2s;}
+nav a:hover{color:var(--lila);}
+.knopf{display:inline-block;background:var(--tief);color:#fff;text-decoration:none;
+  font-size:14.5px;font-weight:600;padding:11px 22px;border-radius:100px;
+  transition:background .2s,transform .2s;}
+.knopf:hover{background:var(--lila);transform:translateY(-1px);}
+.knopf.gross{font-size:16px;padding:15px 30px;}
+.knopf.rand{background:transparent;color:var(--tief);border:1px solid var(--flieder);}
+.knopf.rand:hover{background:var(--flieder-hell);color:var(--tief);}
+.nav-schalter{display:none;background:none;border:0;font-size:24px;color:var(--tief);cursor:pointer;line-height:1;}
 
-  a:focus-visible,.btn:focus-visible{outline:2px solid var(--rosa);outline-offset:3px}
+/* Hero */
+.hero{background:var(--tief);color:#efe6f3;padding:88px 0 0;position:relative;overflow:hidden;}
+.hero::after{content:"";position:absolute;right:-16%;top:-34%;width:64%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(122,42,144,.55),transparent 66%);pointer-events:none;}
+.hero .bahn{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;
+  gap:52px;align-items:end;}
+.hero .auge{color:var(--flieder);}
+.hero .auge::before{background:rgba(205,182,214,.5);}
+.hero h1{font-size:clamp(36px,5.1vw,58px);color:#fff;letter-spacing:-.02em;}
+.hero h1 span{color:var(--flieder);}
+.hero .unter{font-size:clamp(17px,1.9vw,19.5px);color:#c6b3ce;max-width:54ch;margin-top:24px;}
+.hero .knoepfe{display:flex;flex-wrap:wrap;gap:14px;margin:34px 0 0;}
+.hero .knopf{background:#fff;color:var(--tief);}
+.hero .knopf:hover{background:var(--flieder-hell);}
+.hero .knopf.rand{background:transparent;color:#efe6f3;border-color:rgba(205,182,214,.45);}
+.hero .knopf.rand:hover{background:rgba(255,255,255,.08);}
+.hero .rollen{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px;padding-bottom:70px;}
+.hero .rollen span{font-size:13px;border:1px solid rgba(205,182,214,.32);border-radius:100px;
+  padding:7px 15px;color:#d8c6df;}
+.hero .bild{align-self:end;}
+.hero .bild img{width:100%;max-width:420px;margin-left:auto;filter:drop-shadow(0 30px 60px rgba(0,0,0,.35));}
 
-  /* Header */
-  header{position:sticky;top:0;z-index:50;background:rgba(250,245,248,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .brand{font-family:'Playfair Display',serif;font-size:24px;font-weight:600;letter-spacing:-.01em;color:var(--pflaume)}
-  .brand span{color:var(--rosa)}
-  .nav-links{display:flex;gap:32px;align-items:center}
-  .nav-links a{font-size:15px;color:var(--muted);font-weight:500;transition:color .2s}
-  .nav-links a:hover{color:var(--violett)}
-  .nav-right{display:flex;align-items:center;gap:22px}
-  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
-  .burger span{width:24px;height:2px;background:var(--pflaume);border-radius:2px;transition:.2s}
-  .mobile-menu{display:none}
+.streifen{background:var(--weiss);border-bottom:1px solid rgba(205,182,214,.5);padding:26px 0;}
+.streifen .bahn{display:flex;flex-wrap:wrap;gap:14px 40px;align-items:center;justify-content:space-between;}
+.streifen b{font-family:var(--serif);font-size:26px;color:var(--lila);display:block;line-height:1;}
+.streifen small{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sanft);
+  display:block;margin-top:7px;}
 
-  /* Hero */
-  .hero{padding:82px 0 96px;position:relative;overflow:hidden}
-  .hero::after{content:"";position:absolute;right:-160px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(224,155,209,.30),transparent 66%);z-index:0}
-  .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center;position:relative;z-index:1}
-  .hero h1{font-size:clamp(40px,5.6vw,68px);margin:26px 0 26px;color:var(--pflaume)}
-  .hero .lead{font-size:19px;color:var(--muted);max-width:30em;margin-bottom:34px}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px}
-  .trust{display:flex;gap:26px;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
-  .trust b{color:var(--ink);font-weight:600}
-  .trust span{display:inline-flex;align-items:center;gap:8px}
-  .trust .dot{width:6px;height:6px;border-radius:50%;background:var(--rosa)}
+section{padding:96px 0;}
+section.hell{background:var(--weiss);}
+.kopfzeile{max-width:64ch;margin-bottom:44px;}
+.kopfzeile p{margin-top:18px;}
 
-  .portrait{position:relative}
-  .portrait .frame{
-    position:relative;border-radius:220px 220px 12px 12px;overflow:hidden;
-    background:var(--pflaume);box-shadow:0 30px 70px rgba(47,0,58,.28);
-  }
-  .portrait .frame img{width:100%;aspect-ratio:3/3.7;object-fit:cover;object-position:50% 12%}
-  .portrait .tag{
-    position:absolute;left:-18px;bottom:34px;background:#fff;border:1px solid var(--line);
-    padding:12px 18px;border-radius:12px;box-shadow:0 12px 30px rgba(47,0,58,.14);
-  }
-  .portrait .tag .n{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--pflaume)}
-  .portrait .tag .r{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--violett);margin-top:2px}
-  .portrait .blob{position:absolute;top:-24px;right:-22px;width:120px;height:120px;border:1px solid var(--rosa);border-radius:50%;opacity:.6;z-index:-1}
+.leitsatz{background:var(--tief);color:#efe6f3;border-radius:24px;padding:56px 60px;text-align:center;}
+.leitsatz p{font-family:var(--serif);font-size:clamp(22px,3vw,32px);line-height:1.42;color:#fff;}
+.leitsatz p span{color:var(--flieder);}
+.leitsatz .wer{margin-top:22px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#a893b1;}
 
-  /* Section base */
-  .section{padding:96px 0}
-  .sec-head{max-width:40rem;margin-bottom:52px}
-  .sec-head h2{font-size:clamp(30px,3.8vw,44px);margin-top:18px;color:var(--pflaume)}
-  .sec-head p{color:var(--muted);margin-top:16px;font-size:18px}
+.angebote{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;}
+.angebot{background:var(--weiss);border:1px solid rgba(205,182,214,.5);border-radius:20px;
+  padding:32px 30px;display:flex;flex-direction:column;}
+section.hell .angebot{background:var(--grund);}
+.angebot .nr{width:34px;height:34px;border-radius:50%;background:var(--flieder-hell);color:var(--lila);
+  font-family:var(--serif);font-weight:700;font-size:16px;display:flex;align-items:center;
+  justify-content:center;margin-bottom:16px;}
+.angebot h3{margin-bottom:10px;}
+.angebot p{font-size:15.5px;color:var(--sanft);line-height:1.6;}
+.angebot ul{list-style:none;margin-top:14px;}
+.angebot li{font-size:14.5px;color:var(--sanft);padding-left:18px;position:relative;margin-bottom:7px;line-height:1.5;}
+.angebot li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;
+  border-radius:50%;background:var(--flieder);}
 
-  /* Sparring (dunkle Signatur-Sektion) */
-  .spar{background:var(--pflaume);color:#fff}
-  .spar .eyebrow{color:var(--rosa)}
-  .spar .eyebrow::before{background:var(--rosa)}
-  .spar h2{font-size:clamp(28px,3.6vw,40px);color:#fff;max-width:20em;margin-top:16px}
-  .spar .intro{color:var(--sage);margin-top:16px;max-width:34em}
-  .dlg{margin-top:56px;display:grid;gap:2px;border-top:1px solid var(--line-dark)}
-  .ex{display:grid;grid-template-columns:1fr 1.35fr;gap:40px;padding:30px 0;border-bottom:1px solid var(--line-dark);align-items:baseline}
-  .ex .q{font-family:'Inter',sans-serif;font-size:15.5px;color:var(--sage);line-height:1.5}
-  .ex .q::before{content:"„";color:var(--gold)}
-  .ex .q::after{content:"“";color:var(--gold)}
-  .ex .a{font-family:'Playfair Display',serif;font-size:clamp(20px,2.4vw,27px);font-weight:500;line-height:1.28;color:#fff}
-  .ex .a em{font-style:italic;color:var(--gold)}
+.themen{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:20px;}
+.thema{border-top:2px solid var(--flieder);padding-top:18px;}
+.thema .fuer{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--lila);font-weight:600;}
+.thema h3{font-size:18px;margin:8px 0 8px;}
+.thema p{font-size:15px;color:var(--sanft);line-height:1.6;}
 
-  /* Angebot */
-  .cards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-  .card{
-    background:var(--card);border:1px solid var(--line);border-radius:22px;padding:40px 38px;
-    transition:.25s ease;position:relative;box-shadow:0 18px 44px rgba(47,0,58,.05);
-  }
-  .card:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(47,0,58,.10)}
-  .card .k{font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--violett)}
-  .card h3{font-size:27px;margin:16px 0 14px;color:var(--pflaume)}
-  .card p{color:var(--muted);font-size:16px}
-  .card ul{list-style:none;margin-top:22px;display:grid;gap:11px}
-  .card li{position:relative;padding-left:26px;font-size:15.5px;color:var(--ink)}
-  .card li::before{content:"";position:absolute;left:0;top:9px;width:12px;height:1px;background:var(--rosa)}
-  .card.wide{grid-column:1 / -1;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;background:var(--rosa-soft);border-color:var(--line)}
-  .card.wide h3{margin:0 0 6px}
-  .card.wide p{margin:0}
+.stationen{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px;}
+.station{background:var(--weiss);border-radius:18px;padding:28px;border:1px solid rgba(205,182,214,.5);}
+section.hell .station{background:var(--grund);}
+.station .jahr{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--lila);font-weight:600;}
+.station h3{font-size:18px;margin:8px 0 8px;}
+.station p{font-size:15px;color:var(--sanft);line-height:1.6;}
 
-  /* Über mich */
-  .about{background:var(--creme-2)}
-  .about-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:64px;align-items:center}
-  .pullquote{font-family:'Playfair Display',serif;font-size:clamp(26px,3.4vw,38px);font-weight:500;line-height:1.24;color:var(--pflaume)}
-  .pullquote em{font-style:italic;color:var(--violett)}
-  .about-body p{color:var(--muted);margin-top:22px;font-size:17px}
-  .about-facts{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
-  .fact{font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--violett);border:1px solid var(--line);background:#fff;padding:9px 14px;border-radius:100px}
-  .about-photo .frame{border-radius:18px;overflow:hidden;background:var(--pflaume);box-shadow:0 24px 60px rgba(47,0,58,.2)}
-  .about-photo .frame img{width:100%;aspect-ratio:4/4.6;object-fit:cover;object-position:50% 14%}
+.ueber{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center;}
+.ueber .bild{border-radius:22px;overflow:hidden;background:var(--flieder-hell);}
+.ueber p{margin-bottom:14px;}
+.ueber .zitat{font-family:var(--serif);font-size:clamp(20px,2.5vw,25px);line-height:1.4;
+  color:var(--tief);border-left:3px solid var(--lila);padding-left:22px;margin:0 0 24px;}
 
-  /* Ablauf */
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;border-top:1px solid var(--line)}
-  .step{padding:36px 30px 40px 0;border-bottom:1px solid var(--line)}
-  .step .no{font-family:'Playfair Display',serif;font-size:15px;color:var(--violett);font-weight:600}
-  .step h3{font-size:23px;margin:14px 0 12px;color:var(--pflaume)}
-  .step p{color:var(--muted);font-size:15.5px}
+.arbeiten{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.arbeit{background:var(--weiss);border:1px solid rgba(205,182,214,.5);border-radius:16px;padding:24px;
+  text-decoration:none;display:block;transition:border-color .2s,transform .2s;}
+section.hell .arbeit{background:var(--grund);}
+.arbeit:hover{border-color:var(--lila);transform:translateY(-2px);}
+.arbeit .art{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--lila);font-weight:600;}
+.arbeit h3{font-size:16.5px;margin:8px 0 7px;line-height:1.3;}
+.arbeit p{font-size:14px;color:var(--sanft);line-height:1.55;}
 
-  /* Kontakt-Band */
-  .contact{background:linear-gradient(130deg,var(--violett),var(--pflaume));color:#fff;text-align:center}
-  .contact h2{font-size:clamp(34px,4.6vw,54px);color:#fff}
-  .contact .eyebrow{color:var(--rosa);justify-content:center}
-  .contact .eyebrow::before{background:var(--rosa)}
-  .contact p{color:#e7cdee;max-width:32em;margin:18px auto 34px;font-size:18px}
-  .contact .lines{margin-top:34px;font-family:'Inter',sans-serif;font-size:14.5px;color:#e0c4e8;letter-spacing:.03em;line-height:1.9}
-  .contact .lines a{color:#fff;border-bottom:1px solid rgba(224,155,209,.55)}
-  .contact .lines a:hover{border-color:var(--rosa)}
+.schluss{background:var(--tief);color:#efe6f3;text-align:center;padding:104px 0;}
+.schluss h2{color:#fff;max-width:22ch;margin:0 auto;}
+.schluss p{color:#c6b3ce;font-size:19px;max-width:56ch;margin:22px auto 0;}
+.schluss .knopf{margin-top:32px;background:#fff;color:var(--tief);}
+.schluss .knopf:hover{background:var(--flieder-hell);}
+.schluss .leise{margin-top:20px;font-size:15px;color:#a893b1;}
+.schluss .leise a{color:var(--flieder);}
 
-  /* Footer */
-  footer{background:var(--pflaume-2);color:var(--sage);padding:56px 0 34px}
-  .foot{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:28px}
-  .foot .brand{color:#fff}
-  .foot .brand span{color:var(--rosa)}
-  .foot-links{display:flex;gap:24px;flex-wrap:wrap;font-size:14.5px}
-  .foot-links a:hover{color:#fff}
-  .foot-bottom{margin-top:40px;padding-top:22px;border-top:1px solid var(--line-dark);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--sage)}
+footer{background:#1f0027;color:#9b87a4;padding:48px 0;font-size:14.5px;}
+.fussleiste{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;}
+.fussleiste a{color:#c6b3ce;text-decoration:none;}
+.fussleiste a:hover{color:#fff;}
+.fuss-links{display:flex;flex-wrap:wrap;gap:20px;}
 
-  /* Reveal */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
-  .reveal.in{opacity:1;transform:none}
+.auf{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+.auf.da{opacity:1;transform:none;}
 
-  @media(max-width:900px){
-    .hero-grid,.about-grid{grid-template-columns:1fr;gap:44px}
-    .portrait{max-width:420px}
-    .about-photo{order:-1;max-width:360px}
-    .cards{grid-template-columns:1fr}
-    .steps{grid-template-columns:1fr}
-    .step{padding:28px 0}
-    .ex{grid-template-columns:1fr;gap:10px}
-    .nav-links{display:none}
-    .burger{display:flex}
-    .mobile-menu{display:none;flex-direction:column;gap:4px;padding:14px 0 20px;border-top:1px solid var(--line)}
-    .mobile-menu.open{display:flex}
-    .mobile-menu a{padding:11px 4px;color:var(--muted);font-weight:500}
-  }
-  @media(max-width:560px){
-    body{font-size:16px}
-    .section,.hero{padding:64px 0}
-    .card{padding:32px 26px}
-  }
-  @media(prefers-reduced-motion:reduce){
-    *{scroll-behavior:auto}
-    .reveal{opacity:1;transform:none;transition:none}
-    .btn:hover{transform:none}
-    .card:hover{transform:none}
-  }
+@media(max-width:980px){
+  .hero .bahn{grid-template-columns:1fr;gap:0;}
+  .hero .bild{display:none;}
+  .hero .rollen{padding-bottom:76px;}
+  .ueber{grid-template-columns:1fr;gap:34px;}
+  .ueber .bild{max-width:300px;}
+}
+@media(max-width:820px){
+  nav{position:fixed;inset:74px 0 auto;background:var(--weiss);flex-direction:column;
+    align-items:stretch;gap:0;padding:12px 22px 26px;border-bottom:1px solid var(--flieder);
+    display:none;box-shadow:0 18px 40px rgba(47,0,58,.12);}
+  nav.offen{display:flex;}
+  nav a{padding:13px 0;border-bottom:1px solid rgba(205,182,214,.4);font-size:16px;}
+  nav .knopf{text-align:center;margin-top:14px;border-bottom:0;}
+  .nav-schalter{display:block;margin-left:auto;}
+  section{padding:70px 0;}
+  .hero{padding:66px 0 0;}
+  .leitsatz{padding:38px 26px;}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .auf{opacity:1;transform:none;transition:none;}
+  .knopf:hover,.arbeit:hover{transform:none;}
+}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a href="#top" class="brand">Michael Deck<span>.</span></a>
-    <nav class="nav-links">
-      <a href="#sparring">Sparring</a>
+  <div class="bahn kopf">
+    <a class="wortmarke" href="#oben">Michael <span>Deck</span></a>
+    <button class="nav-schalter" aria-expanded="false" aria-controls="hauptnav" aria-label="Menü öffnen">☰</button>
+    <nav id="hauptnav">
       <a href="#angebot">Angebot</a>
+      <a href="#themen">Themen</a>
+      <a href="#praxis">Praxis</a>
+      <a href="#arbeiten">Arbeiten</a>
       <a href="#ueber">Über mich</a>
-      <a href="#ablauf">Ablauf</a>
+      <a class="knopf" href="#kontakt">Vortrag anfragen</a>
     </nav>
-    <div class="nav-right">
-      <a href="mailto:m.deck61@icloud.com?subject=Gespr%C3%A4ch%20zu%20KI" class="btn btn-primary nav-cta">Gespräch vereinbaren</a>
-      <button class="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
   </div>
-  <div class="wrap"><div class="mobile-menu">
-    <a href="#sparring">Sparring</a>
-    <a href="#angebot">Angebot</a>
-    <a href="#ueber">Über mich</a>
-    <a href="#ablauf">Ablauf</a>
-    <a href="mailto:m.deck61@icloud.com?subject=Gespr%C3%A4ch%20zu%20KI">Gespräch vereinbaren</a>
-  </div></div>
 </header>
 
-<a id="top"></a>
+<main id="oben">
 
-<!-- HERO -->
+<!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-text reveal">
-      <span class="eyebrow">KI-Beratung &amp; Ausbildung</span>
-      <h1>Künstliche Intelligenz braucht einen Menschen, der die <span class="serif-i">richtigen Fragen</span> stellt.</h1>
-      <p class="lead">Ich bin Michael Deck. Ich helfe Selbstständigen und Unternehmern, KI nicht nur zu benutzen, sondern klug zu denken – als persönlicher Sparringspartner und in einer Ausbildung, die bleibt.</p>
-      <div class="hero-cta">
-        <a href="mailto:m.deck61@icloud.com?subject=Gespr%C3%A4ch%20zu%20KI" class="btn btn-primary">Gespräch vereinbaren <span class="ar">→</span></a>
-        <a href="#angebot" class="btn btn-ghost">Mein Angebot</a>
+  <div class="bahn">
+    <div>
+      <div class="auge">Künstliche Intelligenz · Vorträge · Begleitung</div>
+      <h1>KI im Mittelstand.<br>Von jemandem, der<br>sie <span>selbst einsetzt</span>.</h1>
+      <p class="unter">Ich bringe künstliche Intelligenz dorthin, wo sie bisher kaum ankommt:
+      in Handwerksbetriebe, Familienunternehmen und Klassenzimmer. Nicht als Vortrag über
+      Möglichkeiten, sondern als gezeigte Praxis.</p>
+      <div class="knoepfe">
+        <a class="knopf gross" href="#kontakt">Vortrag anfragen</a>
+        <a class="knopf gross rand" href="#angebot">Wie ich arbeite</a>
       </div>
-      <div class="trust">
-        <span><span class="dot"></span><b>1:1-Sparring</b>&nbsp;an echten Projekten</span>
-        <span><span class="dot"></span><b>Ausbildung</b>&nbsp;für Einzelne &amp; Gruppen</span>
-        <span><span class="dot"></span>Klartext,&nbsp;<b>kein Fachchinesisch</b></span>
+      <div class="rollen">
+        <span>Geschäftsführer Impact4Entrepreneurship gGmbH</span>
+        <span>Gesellschafter eines Familienbetriebs</span>
+        <span>KI-Unterricht ab Klasse 6</span>
       </div>
     </div>
-    <div class="portrait reveal">
-      <span class="blob"></span>
-      <div class="frame"><img src="images/michael.jpg" alt="Michael Deck, KI-Berater und Unternehmer"></div>
-      <div class="tag"><div class="n">Michael Deck</div><div class="r">Groß Ammensleben</div></div>
+    <div class="bild"><img src="images/michael-frei.png" alt="Michael Deck"></div>
+  </div>
+</section>
+
+<div class="streifen">
+  <div class="bahn">
+    <div><b>6</b><small>veröffentlichte KI-Arbeiten</small></div>
+    <div><b>1</b><small>Kurs zu KI und Gründung</small></div>
+    <div><b>Kl. 6</b><small>ab dieser Stufe unterrichtet</small></div>
+    <div><b>2</b><small>Unternehmen als Testfeld</small></div>
+  </div>
+</div>
+
+<!-- ============ LEITSATZ ============ -->
+<section>
+  <div class="bahn auf">
+    <div class="leitsatz">
+      <p>Was ein Unternehmen tun <em style="font-style:normal;color:var(--flieder)">kann</em>,
+      ist bald keine Frage mehr.<br>
+      <span>Wofür es das tut, beantwortet keine Maschine.</span></p>
+      <div class="wer">Der Satz, an dem sich meine Arbeit misst</div>
     </div>
   </div>
 </section>
 
-<!-- SPARRING (Signatur) -->
-<section class="section spar" id="sparring">
-  <div class="wrap">
-    <span class="eyebrow">Im Sparring</span>
-    <h2>Die meisten KI-Fragen sind eigentlich Denk-Fragen. Hier ein paar davon.</h2>
-    <p class="intro">Gute Beratung gibt keine fertigen Antworten aus. Sie stellt die Frage neu – bis der nächste Schritt klar ist. So klingt das bei mir:</p>
-    <div class="dlg">
-      <div class="ex reveal"><div class="q">Welches KI-Tool ist das beste?</div><div class="a">Die falsche Frage. Zuerst das <em>Problem</em> – dann das Werkzeug.</div></div>
-      <div class="ex reveal"><div class="q">Ich habe keine Zeit, mich da einzuarbeiten.</div><div class="a">Dann fangen wir mit der <em>einen</em> Aufgabe an, die Ihnen jede Woche Zeit stiehlt.</div></div>
-      <div class="ex reveal"><div class="q">Ist das nicht alles nur Hype?</div><div class="a">Vielleicht. Aber Ihr Wettbewerb übt schon. <em>Üben wir mit.</em></div></div>
-      <div class="ex reveal"><div class="q">Kann KI meine Entscheidungen treffen?</div><div class="a">Nein. Sie soll Ihr Denken <em>schärfen</em>, nicht ersetzen.</div></div>
+<!-- ============ ANGEBOT ============ -->
+<section id="angebot" class="hell">
+  <div class="bahn">
+    <div class="kopfzeile auf">
+      <div class="auge">Angebot</div>
+      <h2>Drei Formate, ein Anspruch.</h2>
+      <p class="gross">Am Ende soll jemand etwas anders machen als vorher – nicht nur mehr
+      wissen. Deshalb arbeite ich in allen drei Formaten mit echten Fällen.</p>
     </div>
-  </div>
-</section>
 
-<!-- ANGEBOT -->
-<section class="section" id="angebot">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Angebot</span>
-      <h2>Zwei Wege, mit denen ich arbeite.</h2>
-      <p>Persönlich, an Ihren echten Aufgaben – und immer mit dem Ziel, dass Sie es am Ende selbst können.</p>
-    </div>
-    <div class="cards">
-      <div class="card reveal">
-        <div class="k">01 — Einzelbegleitung</div>
-        <h3>KI-Sparring</h3>
-        <p>Ihr Denkpartner für die Fragen, bei denen es zählt. Wir gehen Ihre echten Themen durch – Entscheidungen, Angebote, Texte, Abläufe – und Sie gehen mit einem Ergebnis heraus, das bleibt.</p>
+    <div class="angebote auf">
+      <div class="angebot">
+        <div class="nr">1</div>
+        <h3>Keynote und Impuls</h3>
+        <p>Für Unternehmerkreise, Kammern, Verbände und Kongresse. Mit dem, was tatsächlich
+        schon läuft – nicht mit dem, was Anbieter versprechen.</p>
         <ul>
-          <li>1:1, online oder bei Ihnen vor Ort</li>
-          <li>An Ihren laufenden Projekten, nicht an Beispielen</li>
-          <li>Verständlich erklärt, ohne Fachjargon</li>
+          <li>30 bis 60 Minuten, anschließend Gespräch</li>
+          <li>Live-Demonstration statt Folienschlacht</li>
+          <li>Auf Wunsch auf die Branche zugeschnitten</li>
         </ul>
       </div>
-      <div class="card reveal">
-        <div class="k">02 — Ausbildung</div>
-        <h3>Kurse &amp; Ausbildung</h3>
-        <p>Vom ersten Prompt zur souveränen Nutzung. Ein strukturierter Weg – für Einzelne oder kleine Gruppen –, der aus Neugier echtes Handwerk macht.</p>
+      <div class="angebot">
+        <div class="nr">2</div>
+        <h3>Projektwoche und Unterricht</h3>
+        <p>Für Schulen und Hochschulen. KI nicht als Bedrohung erklärt, sondern
+        ausprobiert – mit fertigem Lehrerskript und Material.</p>
         <ul>
-          <li>Schritt für Schritt, aufeinander aufbauend</li>
-          <li>Praxis- und werteorientiert</li>
-          <li>Als Einzelbegleitung oder in der Gruppe</li>
+          <li>Projektwochen ab Klasse 6</li>
+          <li>Wirtschaftsbildung mit KI-Bezug</li>
+          <li>Fortbildung für Lehrkräfte</li>
         </ul>
       </div>
-      <div class="card wide reveal">
-        <div>
-          <h3>Vorträge &amp; Impulse</h3>
-          <p>Klartext-Impulse zu KI für Teams, Netzwerke und Veranstaltungen – geerdet, ehrlich, ohne Buzzword-Bingo.</p>
-        </div>
-        <a href="mailto:m.deck61@icloud.com?subject=Vortrag%20%2F%20Impuls" class="btn btn-ghost">Anfragen <span class="ar">→</span></a>
+      <div class="angebot">
+        <div class="nr">3</div>
+        <h3>Begleitung im Unternehmen</h3>
+        <p>Für Betriebe, die nicht wissen, wo sie anfangen sollen. Wir suchen die zwei, drei
+        Stellen, an denen KI heute schon Zeit spart – und setzen sie um.</p>
+        <ul>
+          <li>Bestandsaufnahme entlang echter Abläufe</li>
+          <li>Umsetzung statt Konzeptpapier</li>
+          <li>Klärung von Datenschutz und Verantwortung</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ÜBER MICH -->
-<section class="section about" id="ueber">
-  <div class="wrap about-grid">
-    <div class="about-photo reveal">
-      <div class="frame"><img src="images/michael.jpg" alt="Porträt von Michael Deck"></div>
+<!-- ============ THEMEN ============ -->
+<section id="themen">
+  <div class="bahn">
+    <div class="kopfzeile auf">
+      <div class="auge">Themen</div>
+      <h2>Worüber ich spreche.</h2>
+      <p class="gross">Vier Felder, in denen ich selbst arbeite – und über die ich deshalb
+      nicht nur referieren, sondern berichten kann.</p>
     </div>
-    <div class="about-body reveal">
-      <span class="eyebrow">Über mich</span>
-      <p class="pullquote" style="margin-top:20px">„Ich verkaufe keine Werkzeuge. Ich helfe Menschen, <em>klarer zu denken</em> – und KI dabei als Verstärker zu nutzen."</p>
-      <p>Ich bin Michael Deck – Unternehmer, Gründer und Geschäftsführer der Impact4Entrepreneurship gGmbH. Seit Jahren verbinde ich unternehmerische Praxis mit einer klaren Werteorientierung.</p>
-      <p>Künstliche Intelligenz sehe ich nicht als Spielerei, sondern als Werkzeug, das kluge Fragen belohnt. Genau da setze ich an: Ich bringe Erfahrung, Struktur und einen ehrlichen Blick mit – und begleite Sie so lange, bis Sie sicher selbst weitermachen.</p>
-      <div class="about-facts">
-        <span class="fact">Geschäftsführer · I4E gGmbH</span>
-        <span class="fact">Unternehmer &amp; Gründer</span>
-        <span class="fact">Groß Ammensleben</span>
+
+    <div class="themen auf">
+      <div class="thema">
+        <div class="fuer">Für Unternehmer</div>
+        <h3>KI im Handwerk und Mittelstand</h3>
+        <p>Was heute wirklich funktioniert – Angebote, Auswertungen, Texte, Bilder – und was
+        noch teure Spielerei ist.</p>
+      </div>
+      <div class="thema">
+        <div class="fuer">Für Gründer</div>
+        <h3>Nebenberuflich gründen mit KI</h3>
+        <p>Wie sich mit heutigen Werkzeugen ein Geschäftsmodell prüfen lässt, bevor man
+        Geld und Jahre investiert.</p>
+      </div>
+      <div class="thema">
+        <div class="fuer">Für Schulen</div>
+        <h3>KI verstehen statt verbieten</h3>
+        <p>Wie Schülerinnen und Schüler lernen, mit KI zu arbeiten – und wo sie ihr besser
+        nicht glauben.</p>
+      </div>
+      <div class="thema">
+        <div class="fuer">Für Entscheider</div>
+        <h3>Verantwortung, wenn die Maschine mitdenkt</h3>
+        <p>Wer haftet, wer entscheidet, was bleibt beim Menschen. Die Frage, die in den
+        meisten KI-Vorträgen fehlt.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABLAUF -->
-<section class="section" id="ablauf">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">So arbeiten wir</span>
-      <h2>In drei Schritten zum ersten Ergebnis.</h2>
+<!-- ============ PRAXIS ============ -->
+<section id="praxis" class="hell">
+  <div class="bahn">
+    <div class="kopfzeile auf">
+      <div class="auge">Praxis</div>
+      <h2>Wo ich es selbst mache.</h2>
+      <p class="gross">Ich spreche über nichts, was ich nicht im eigenen Betrieb oder vor
+      einer echten Klasse ausprobiert habe.</p>
     </div>
-    <div class="steps">
-      <div class="step reveal">
-        <div class="no">01</div>
-        <h3>Gespräch</h3>
-        <p>Ein kostenloses Kennenlernen. Wir klären, wo Sie stehen und was sich für Sie wirklich lohnt.</p>
+
+    <div class="stationen auf">
+      <div class="station">
+        <div class="jahr">Handwerk · Raum Magdeburg</div>
+        <h3>Ein Familienbetrieb als Testfeld</h3>
+        <p>Als Gesellschafter eines Handwerksunternehmens setze ich KI dort ein, wo es
+        Widerstand gibt: bei Auswertungen, Angeboten und Kundentexten. Was hier nicht
+        funktioniert, empfehle ich nicht weiter.</p>
       </div>
-      <div class="step reveal">
-        <div class="no">02</div>
-        <h3>Klarer Plan</h3>
-        <p>Sie bekommen einen konkreten Weg – keine Tool-Liste, sondern die nächsten sinnvollen Schritte.</p>
+      <div class="station">
+        <div class="jahr">Schule · ab Klasse 6</div>
+        <h3>Unterricht und Projektwochen</h3>
+        <p>Ein ausgearbeitetes Lehrerskript, eine Projektwochen-Keynote und Unterrichts&shy;einheiten
+        zu Wirtschaft, Geld und KI – erprobt an Schulen, unter anderem in Leipzig und Berlin.</p>
       </div>
-      <div class="step reveal">
-        <div class="no">03</div>
-        <h3>Begleitung</h3>
-        <p>Wir setzen um. Ich bleibe an Ihrer Seite, bis Sie es sicher selbst können.</p>
+      <div class="station">
+        <div class="jahr">Gemeinnützig · Impact4Entrepreneurship</div>
+        <h3>Bildung mit Haltung</h3>
+        <p>In der gGmbH verbinde ich beides: die technische Seite und die Frage, wofür man
+        das Ganze eigentlich einsetzt. Ohne diese zweite Hälfte wäre KI nur ein
+        Effizienzwerkzeug.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- KONTAKT -->
-<section class="section contact" id="kontakt">
-  <div class="wrap">
-    <span class="eyebrow">Kontakt</span>
-    <h2 style="margin-top:16px">Lassen Sie uns reden.</h2>
-    <p>Ein Gespräch kostet nichts – außer einer halben Stunde Zeit. Schreiben Sie mir kurz, worum es geht, und wir finden einen Termin.</p>
-    <a href="mailto:m.deck61@icloud.com?subject=Gespr%C3%A4ch%20zu%20KI" class="btn btn-light">m.deck61@icloud.com schreiben <span class="ar">→</span></a>
-    <div class="lines">
-      Michael Deck · Holzweg 2c · 39326 Groß Ammensleben<br>
-      <a href="mailto:m.deck61@icloud.com">m.deck61@icloud.com</a>
+<!-- ============ ARBEITEN ============ -->
+<section id="arbeiten">
+  <div class="bahn">
+    <div class="kopfzeile auf">
+      <div class="auge">Veröffentlicht</div>
+      <h2>Was ich dazu geschrieben habe.</h2>
+      <p class="gross">Frei zugänglich, ohne Anmeldung.</p>
+    </div>
+    <div class="arbeiten auf">
+      <a class="arbeit" href="https://impact4entrepreneurship.github.io/agi-2027/" target="_blank" rel="noopener">
+        <div class="art">Analyse</div>
+        <h3>AGI 2027</h3>
+        <p>Was hinter der Prognose steckt, dass allgemeine künstliche Intelligenz näher ist,
+        als die meisten annehmen.</p>
+      </a>
+      <a class="arbeit" href="https://impact4entrepreneurship.github.io/ki-stresstest-marktwirtschaft/" target="_blank" rel="noopener">
+        <div class="art">Essay</div>
+        <h3>KI als Stresstest der Marktwirtschaft</h3>
+        <p>Was passiert mit Wettbewerb, Arbeit und Preisbildung, wenn Denken billig wird.</p>
+      </a>
+      <a class="arbeit" href="https://impact4entrepreneurship.github.io/ki-nebenberuflich-gruenden/" target="_blank" rel="noopener">
+        <div class="art">Leitfaden</div>
+        <h3>Nebenberuflich gründen mit KI</h3>
+        <p>Der praktische Weg von der Idee zum geprüften Geschäftsmodell.</p>
+      </a>
+      <a class="arbeit" href="https://impact4entrepreneurship.github.io/massive-ki-durchbrueche/" target="_blank" rel="noopener">
+        <div class="art">Überblick</div>
+        <h3>Massive KI-Durchbrüche</h3>
+        <p>Was sich zuletzt tatsächlich verändert hat – und was nur nach Fortschritt aussah.</p>
+      </a>
+      <a class="arbeit" href="https://impact4entrepreneurship.github.io/neuromorphe-ki/" target="_blank" rel="noopener">
+        <div class="art">Technik</div>
+        <h3>Neuromorphe KI</h3>
+        <p>Warum die nächste Rechnergeneration dem Gehirn ähnlicher wird – und was das
+        für den Energiebedarf heißt.</p>
+      </a>
+      <a class="arbeit" href="https://impact4entrepreneurship.github.io/blissruption-kurs/" target="_blank" rel="noopener">
+        <div class="art">Kurs</div>
+        <h3>BLISSruption</h3>
+        <p>Unternehmertum aus Berufung – ein Online-Kurs, in dem KI das Werkzeug ist,
+        nicht das Thema.</p>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="foot">
+<!-- ============ ÜBER MICH ============ -->
+<section id="ueber" class="hell">
+  <div class="bahn">
+    <div class="ueber auf">
+      <div class="bild"><img src="images/michael-deck.jpg" alt="Michael Deck"></div>
       <div>
-        <div class="brand">Michael Deck<span>.</span></div>
-        <p style="margin-top:12px;max-width:26em;font-size:14.5px">KI-Beratung &amp; Ausbildung für Selbstständige und Unternehmer. Persönlich, ehrlich, praxisnah.</p>
-      </div>
-      <div class="foot-links">
-        <a href="#sparring">Sparring</a>
-        <a href="#angebot">Angebot</a>
-        <a href="#ueber">Über mich</a>
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
+        <div class="auge">Über mich</div>
+        <p class="zitat">„Die meisten KI-Vorträge erklären, was möglich wäre. Ich zeige,
+        was ich gestern damit gemacht habe."</p>
+        <p>Ich bin Unternehmer, nicht Informatiker. Was ich über künstliche Intelligenz
+        sage, stammt nicht aus Studien, sondern aus der täglichen Anwendung – in einem
+        Handwerksbetrieb, in einer gemeinnützigen Gesellschaft und im Unterricht.</p>
+        <p>Das macht meine Perspektive schmaler als die eines Forschers und brauchbarer
+        für alle, die morgen früh eine Entscheidung treffen müssen. Ich kenne die
+        Werkzeuge, ich kenne ihre Grenzen, und ich weiß, woran Einführungsprojekte in
+        kleinen Betrieben tatsächlich scheitern.</p>
+        <p>Der zweite Teil meiner Arbeit ist die Frage, die dabei meist untergeht: Wofür
+        setzen wir das ein? Genau dort verbindet sich die Technik mit dem, woran ich
+        ohnehin arbeite.</p>
       </div>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 Michael Deck</span>
-      <span>Groß Ammensleben</span>
+  </div>
+</section>
+
+<!-- ============ KONTAKT ============ -->
+<section id="kontakt" class="schluss">
+  <div class="bahn">
+    <div class="auge" style="color:var(--flieder);justify-content:center">Anfragen</div>
+    <h2>Sprechen wir darüber.</h2>
+    <p>Vortrag, Projektwoche oder Begleitung im Betrieb – schreiben Sie mir in wenigen
+    Sätzen, worum es geht und vor wem. Sie bekommen eine persönliche Antwort.</p>
+    <a class="knopf gross" href="mailto:michael.deck@impact4entrepreneurship.de?subject=Anfrage%20KI-Vortrag&amp;body=Guten%20Tag%20Herr%20Deck%2C%0A%0AAnlass%20und%20Publikum%3A%0A%0ATermin%20und%20Ort%3A%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen%0A">Anfrage schreiben</a>
+    <p class="leise">Oder direkt: <a href="mailto:michael.deck@impact4entrepreneurship.de">michael.deck@impact4entrepreneurship.de</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="bahn fussleiste">
+    <div>© 2026 Michael Deck</div>
+    <div class="fuss-links">
+      <a href="#angebot">Angebot</a>
+      <a href="#themen">Themen</a>
+      <a href="#arbeiten">Arbeiten</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
     </div>
   </div>
 </footer>
 
 <script>
-  // Mobile menu
-  var burger=document.querySelector('.burger');
-  var menu=document.querySelector('.mobile-menu');
-  burger.addEventListener('click',function(){
-    var open=menu.classList.toggle('open');
-    burger.setAttribute('aria-expanded',open?'true':'false');
-  });
-  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');burger.setAttribute('aria-expanded','false');});});
-
-  // Scroll reveal
-  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-    },{threshold:.14});
-    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
-  }else{
-    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
-  }
+const schalter=document.querySelector('.nav-schalter');
+const navi=document.getElementById('hauptnav');
+schalter.addEventListener('click',()=>{
+  const offen=navi.classList.toggle('offen');
+  schalter.setAttribute('aria-expanded',offen);
+  schalter.setAttribute('aria-label',offen?'Menü schließen':'Menü öffnen');
+});
+navi.addEventListener('click',e=>{if(e.target.tagName==='A')navi.classList.remove('offen');});
+const beobachter=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('da');beobachter.unobserve(x.target);}});
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.auf').forEach(el=>beobachter.observe(el));
 </script>
 </body>
 </html>
