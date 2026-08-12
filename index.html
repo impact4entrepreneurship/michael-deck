@@ -2,484 +2,515 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Michael Deck – Künstliche Intelligenz im Mittelstand</title>
-<meta name="description" content="Michael Deck bringt künstliche Intelligenz in Handwerk, Mittelstand und Schule – als Praktiker, der es im eigenen Unternehmen vormacht. Vorträge, Projektwochen, Begleitung.">
-<link rel="icon" href="images/i4e-logo.png">
-<link rel="stylesheet" href="fonts/fonts.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Michael Deck – Berufung erkennen. Aus Klarheit wirken.</title>
+<meta name="description" content="Ich begleite Menschen, deren bisheriges Leben nicht mehr trägt, zur Klarheit über ihre Berufung – mit Fragen, Stille und der Tora als Lebensschule.">
+<meta name="theme-color" content="#F2ECE4">
+<link rel="icon" href="symbol.svg" type="image/svg+xml">
 <style>
+@font-face{font-family:'Playfair Display';src:url('schriften/playfair.woff2') format('woff2');
+  font-weight:400 800;font-style:normal;font-display:swap;}
+@font-face{font-family:'Playfair Display';src:url('schriften/playfair-kursiv.woff2') format('woff2');
+  font-weight:400 800;font-style:italic;font-display:swap;}
+@font-face{font-family:'Inter';src:url('schriften/inter.woff2') format('woff2');
+  font-weight:100 900;font-style:normal;font-display:swap;}
+
 :root{
-  --tief:#2f003a; --lila-dunkel:#5b156d; --lila:#7a2a90;
-  --flieder:#cdb6d6; --flieder-hell:#ecdff0;
-  --grund:#faf5f8; --weiss:#fffdff;
-  --text:#3a2f40; --sanft:#6f6577; --signal:#00c2a8;
+  --creme:#F2ECE4; --creme-2:#EFE7DC; --karte:#FFFFFF;
+  --dunkel:#26201B; --akzent:#A07D52; --akzent-hell:#C9A877;
+  --grau:#6B6259; --linie:#E3D9CC;
   --serif:'Playfair Display',Georgia,serif;
   --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:var(--sans);color:var(--text);background:var(--grund);
-  line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-img{max-width:100%;display:block;}
-a{color:inherit;}
-:focus-visible{outline:3px solid var(--lila);outline-offset:3px;border-radius:4px;}
-.bahn{max-width:1180px;margin:0 auto;padding:0 28px;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{background:var(--creme);color:var(--dunkel);font-family:var(--sans);
+  line-height:1.68;-webkit-font-smoothing:antialiased;}
+.bahn{max-width:1000px;margin:0 auto;padding:0 26px;}
+.eng{max-width:680px;}
 
-.auge{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--lila);display:flex;align-items:center;gap:14px;margin-bottom:20px;}
-.auge::before{content:"";width:34px;height:1px;background:var(--flieder);flex:0 0 auto;}
-h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.14;color:var(--tief);}
-h2{font-size:clamp(29px,4vw,44px);letter-spacing:-.015em;}
-h3{font-size:19px;line-height:1.25;}
-p{font-size:17px;}
-.gross{font-size:19px;color:var(--sanft);line-height:1.7;}
-
-header{position:sticky;top:0;z-index:60;background:rgba(250,245,248,.9);
-  backdrop-filter:blur(14px);border-bottom:1px solid rgba(205,182,214,.5);}
-.kopf{display:flex;align-items:center;gap:26px;height:74px;}
-.wortmarke{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--tief);text-decoration:none;letter-spacing:-.01em;}
-.wortmarke span{color:var(--lila);}
-nav{margin-left:auto;display:flex;align-items:center;gap:26px;}
-nav a{font-size:14.5px;font-weight:500;color:var(--sanft);text-decoration:none;transition:color .2s;}
-nav a:hover{color:var(--lila);}
-.knopf{display:inline-block;background:var(--tief);color:#fff;text-decoration:none;
-  font-size:14.5px;font-weight:600;padding:11px 22px;border-radius:100px;
-  transition:background .2s,transform .2s;}
-.knopf:hover{background:var(--lila);transform:translateY(-1px);}
-.knopf.gross{font-size:16px;padding:15px 30px;}
-.knopf.rand{background:transparent;color:var(--tief);border:1px solid var(--flieder);}
-.knopf.rand:hover{background:var(--flieder-hell);color:var(--tief);}
-.nav-schalter{display:none;background:none;border:0;font-size:24px;color:var(--tief);cursor:pointer;line-height:1;}
-
-/* Hero */
-.hero{background:var(--tief);color:#efe6f3;padding:88px 0 0;position:relative;overflow:hidden;}
-.hero::after{content:"";position:absolute;right:-16%;top:-34%;width:64%;aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle,rgba(122,42,144,.55),transparent 66%);pointer-events:none;}
-.hero .bahn{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;
-  gap:52px;align-items:end;}
-.hero .auge{color:var(--flieder);}
-.hero .auge::before{background:rgba(205,182,214,.5);}
-.hero h1{font-size:clamp(36px,5.1vw,58px);color:#fff;letter-spacing:-.02em;}
-.hero h1 span{color:var(--flieder);}
-.hero .unter{font-size:clamp(17px,1.9vw,19.5px);color:#c6b3ce;max-width:54ch;margin-top:24px;}
-.hero .knoepfe{display:flex;flex-wrap:wrap;gap:14px;margin:34px 0 0;}
-.hero .knopf{background:#fff;color:var(--tief);}
-.hero .knopf:hover{background:var(--flieder-hell);}
-.hero .knopf.rand{background:transparent;color:#efe6f3;border-color:rgba(205,182,214,.45);}
-.hero .knopf.rand:hover{background:rgba(255,255,255,.08);}
-.hero .rollen{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px;padding-bottom:70px;}
-.hero .rollen span{font-size:13px;border:1px solid rgba(205,182,214,.32);border-radius:100px;
-  padding:7px 15px;color:#d8c6df;}
-.hero .bild{align-self:end;}
-.hero .bild img{width:100%;max-width:420px;margin-left:auto;filter:drop-shadow(0 30px 60px rgba(0,0,0,.35));}
-
-.streifen{background:var(--weiss);border-bottom:1px solid rgba(205,182,214,.5);padding:26px 0;}
-.streifen .bahn{display:flex;flex-wrap:wrap;gap:14px 40px;align-items:center;justify-content:space-between;}
-.streifen b{font-family:var(--serif);font-size:26px;color:var(--lila);display:block;line-height:1;}
-.streifen small{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sanft);
-  display:block;margin-top:7px;}
-
-section{padding:96px 0;}
-section.hell{background:var(--weiss);}
-.kopfzeile{max-width:64ch;margin-bottom:44px;}
-.kopfzeile p{margin-top:18px;}
-
-.leitsatz{background:var(--tief);color:#efe6f3;border-radius:24px;padding:56px 60px;text-align:center;}
-.leitsatz p{font-family:var(--serif);font-size:clamp(22px,3vw,32px);line-height:1.42;color:#fff;}
-.leitsatz p span{color:var(--flieder);}
-.leitsatz .wer{margin-top:22px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#a893b1;}
-
-.angebote{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;}
-.angebot{background:var(--weiss);border:1px solid rgba(205,182,214,.5);border-radius:20px;
-  padding:32px 30px;display:flex;flex-direction:column;}
-section.hell .angebot{background:var(--grund);}
-.angebot .nr{width:34px;height:34px;border-radius:50%;background:var(--flieder-hell);color:var(--lila);
-  font-family:var(--serif);font-weight:700;font-size:16px;display:flex;align-items:center;
-  justify-content:center;margin-bottom:16px;}
-.angebot h3{margin-bottom:10px;}
-.angebot p{font-size:15.5px;color:var(--sanft);line-height:1.6;}
-.angebot ul{list-style:none;margin-top:14px;}
-.angebot li{font-size:14.5px;color:var(--sanft);padding-left:18px;position:relative;margin-bottom:7px;line-height:1.5;}
-.angebot li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;
-  border-radius:50%;background:var(--flieder);}
-
-.themen{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:20px;}
-.thema{border-top:2px solid var(--flieder);padding-top:18px;}
-.thema .fuer{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--lila);font-weight:600;}
-.thema h3{font-size:18px;margin:8px 0 8px;}
-.thema p{font-size:15px;color:var(--sanft);line-height:1.6;}
-
-.stationen{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px;}
-.station{background:var(--weiss);border-radius:18px;padding:28px;border:1px solid rgba(205,182,214,.5);}
-section.hell .station{background:var(--grund);}
-.station .jahr{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--lila);font-weight:600;}
-.station h3{font-size:18px;margin:8px 0 8px;}
-.station p{font-size:15px;color:var(--sanft);line-height:1.6;}
-
-.ueber{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center;}
-.ueber .bild{border-radius:22px;overflow:hidden;background:var(--flieder-hell);}
-.ueber p{margin-bottom:14px;}
-.ueber .zitat{font-family:var(--serif);font-size:clamp(20px,2.5vw,25px);line-height:1.4;
-  color:var(--tief);border-left:3px solid var(--lila);padding-left:22px;margin:0 0 24px;}
-
-.arbeiten{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.arbeit{background:var(--weiss);border:1px solid rgba(205,182,214,.5);border-radius:16px;padding:24px;
-  text-decoration:none;display:block;transition:border-color .2s,transform .2s;}
-section.hell .arbeit{background:var(--grund);}
-.arbeit:hover{border-color:var(--lila);transform:translateY(-2px);}
-.arbeit.kanal{border-color:var(--flieder);background:linear-gradient(160deg,rgba(122,42,144,.07),rgba(122,42,144,0) 62%);}
-.arbeit.kanal .art::before{content:"\25B6";margin-right:7px;font-size:10px;}
-.arbeit .art{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--lila);font-weight:600;}
-.arbeit h3{font-size:16.5px;margin:8px 0 7px;line-height:1.3;}
-.arbeit p{font-size:14px;color:var(--sanft);line-height:1.55;}
-
-.schluss{background:var(--tief);color:#efe6f3;text-align:center;padding:104px 0;}
-.schluss h2{color:#fff;max-width:22ch;margin:0 auto;}
-.schluss p{color:#c6b3ce;font-size:19px;max-width:56ch;margin:22px auto 0;}
-.schluss .knopf{margin-top:32px;background:#fff;color:var(--tief);}
-.schluss .knopf:hover{background:var(--flieder-hell);}
-.schluss .leise{margin-top:20px;font-size:15px;color:#a893b1;}
-.schluss .leise a{color:var(--flieder);}
-
-footer{background:#1f0027;color:#9b87a4;padding:48px 0;font-size:14.5px;}
-.fussleiste{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;}
-.fussleiste a{color:#c6b3ce;text-decoration:none;}
-.fussleiste a:hover{color:#fff;}
-.fuss-links{display:flex;flex-wrap:wrap;gap:20px;}
-
-.auf{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
-.auf.da{opacity:1;transform:none;}
-
-@media(max-width:980px){
-  .hero .bahn{grid-template-columns:1fr;gap:0;}
-  .hero .bild{display:none;}
-  .hero .rollen{padding-bottom:76px;}
-  .ueber{grid-template-columns:1fr;gap:34px;}
-  .ueber .bild{max-width:300px;}
+/* ---------- Navigation ---------- */
+nav{position:sticky;top:0;z-index:20;background:rgba(242,236,228,.93);
+  backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--linie);}
+nav .bahn{display:flex;align-items:center;justify-content:space-between;
+  gap:20px;height:62px;}
+nav .name{font-family:var(--serif);font-weight:700;font-size:16px;letter-spacing:1.6px;
+  white-space:nowrap;}
+nav ul{list-style:none;display:flex;gap:24px;overflow-x:auto;scrollbar-width:none;}
+nav ul::-webkit-scrollbar{display:none;}
+nav a{color:var(--grau);text-decoration:none;font-size:14px;white-space:nowrap;
+  padding:4px 0;border-bottom:1.5px solid transparent;}
+nav a:hover{color:var(--dunkel);border-bottom-color:var(--akzent-hell);}
+/* Auf dem Handy nicht ausblenden, sondern seitlich schiebbar machen –
+   bei einer langen Seite braucht man die Sprungmarken gerade dort. */
+@media (max-width:860px){
+  nav .bahn{gap:14px;padding:0 18px;}
+  nav .name{font-size:13.5px;letter-spacing:1.2px;}
+  nav ul{gap:18px;-webkit-overflow-scrolling:touch;
+         mask-image:linear-gradient(to right,#000 88%,transparent);}
+  nav a{font-size:13.5px;}
 }
-@media(max-width:820px){
-  nav{position:fixed;inset:74px 0 auto;background:var(--weiss);flex-direction:column;
-    align-items:stretch;gap:0;padding:12px 22px 26px;border-bottom:1px solid var(--flieder);
-    display:none;box-shadow:0 18px 40px rgba(47,0,58,.12);}
-  nav.offen{display:flex;}
-  nav a{padding:13px 0;border-bottom:1px solid rgba(205,182,214,.4);font-size:16px;}
-  nav .knopf{text-align:center;margin-top:14px;border-bottom:0;}
-  .nav-schalter{display:block;margin-left:auto;}
-  section{padding:70px 0;}
-  .hero{padding:66px 0 0;}
-  .leitsatz{padding:38px 26px;}
-}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto;}
-  .auf{opacity:1;transform:none;transition:none;}
-  .knopf:hover,.arbeit:hover{transform:none;}
+
+/* ---------- Grundbausteine ---------- */
+section{padding:86px 0;}
+section:nth-of-type(even){background:var(--creme-2);}
+.marke{font-size:11.5px;font-weight:600;letter-spacing:3.2px;text-transform:uppercase;
+  color:var(--akzent);margin-bottom:16px;}
+h2{font-family:var(--serif);font-weight:700;font-size:38px;line-height:1.16;
+  margin-bottom:20px;max-width:20ch;}
+h3{font-family:var(--serif);font-weight:700;font-size:21px;margin-bottom:9px;}
+p{font-size:17.5px;margin-bottom:16px;max-width:66ch;}
+p.gross{font-size:20px;line-height:1.6;}
+.leise{color:var(--grau);}
+em{color:var(--akzent);font-style:italic;}
+strong{font-weight:600;}
+a.text{color:var(--akzent);}
+
+.knopf{display:inline-block;background:var(--dunkel);color:#F6F1EA;text-decoration:none;
+  border-radius:12px;padding:16px 30px;font-weight:600;font-size:16.5px;
+  transition:transform .15s ease;}
+.knopf:hover{transform:translateY(-2px);}
+.knopf.hell{background:transparent;color:var(--akzent);
+  box-shadow:inset 0 0 0 1.5px var(--akzent-hell);}
+.knopfzeile{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;}
+
+/* ---------- Hero ---------- */
+header.hero{background:var(--dunkel);color:#EFE7DC;padding:104px 0 96px;}
+header.hero .balken{width:64px;height:5px;background:var(--akzent);border-radius:3px;
+  margin-bottom:34px;}
+header.hero h1{font-family:var(--serif);font-weight:800;font-size:56px;line-height:1.08;
+  color:#fff;max-width:16ch;margin-bottom:28px;}
+header.hero h1 em{color:var(--akzent-hell);font-style:normal;}
+header.hero p{font-size:21px;color:#CDC3B6;max-width:54ch;margin-bottom:12px;}
+header.hero .claim{margin-top:40px;font-family:var(--serif);font-style:italic;
+  font-size:19px;color:var(--akzent-hell);}
+header.hero .knopf{background:var(--akzent);color:#20180F;}
+header.hero .knopf.hell{background:transparent;color:var(--akzent-hell);
+  box-shadow:inset 0 0 0 1.5px #5A4A38;}
+
+/* ---------- Zitatstimmen ---------- */
+.stimmen{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px;max-width:820px;}
+@media (max-width:640px){ .stimmen{grid-template-columns:1fr;} }
+.stimme{background:var(--karte);border-radius:15px;padding:24px 26px;
+  box-shadow:0 8px 26px rgba(38,32,27,.07);}
+.stimme p{font-family:var(--serif);font-size:19px;line-height:1.5;margin:0;color:var(--dunkel);}
+
+/* ---------- Der Weg ---------- */
+.weg{margin-top:40px;}
+.stufe{display:flex;gap:26px;padding:26px 0;border-top:1px solid var(--linie);}
+.stufe:last-child{border-bottom:1px solid var(--linie);}
+.stufe .nr{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--akzent);
+  min-width:34px;flex:0 0 auto;padding-top:5px;}
+.stufe .inhalt{flex:1;}
+.stufe p{margin:0;font-size:16.5px;color:var(--grau);}
+
+/* ---------- Karten ---------- */
+.karten{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:22px;
+  margin-top:34px;}
+.karte{background:var(--karte);border-radius:16px;padding:30px 30px;
+  box-shadow:0 8px 26px rgba(38,32,27,.07);}
+.karte p{font-size:16.5px;color:var(--grau);margin-bottom:0;}
+.karte.dunkel{background:var(--dunkel);color:#DED4C7;}
+.karte.dunkel h3{color:#fff;} .karte.dunkel p{color:#C0B5A6;}
+.karte .zahl{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--akzent);
+  margin-bottom:12px;display:block;}
+
+/* ---------- Listen ---------- */
+ul.punkte{list-style:none;margin:8px 0 0;}
+ul.punkte li{position:relative;padding-left:26px;margin-bottom:11px;font-size:17px;
+  max-width:62ch;}
+ul.punkte li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;
+  border-radius:50%;background:var(--akzent-hell);}
+
+/* ---------- Zitat gross ---------- */
+.leitsatz{font-family:var(--serif);font-size:30px;line-height:1.38;color:var(--dunkel);
+  border-left:4px solid var(--akzent-hell);padding-left:26px;margin:38px 0;max-width:24ch;}
+.leitsatz.hell{color:#F1E9DE;border-color:var(--akzent);}
+
+/* ---------- Über ---------- */
+.ueber{display:grid;grid-template-columns:300px 1fr;gap:46px;align-items:start;}
+.ueber img{width:100%;border-radius:18px;display:block;
+  box-shadow:0 14px 40px rgba(38,32,27,.18);}
+@media (max-width:760px){ .ueber{grid-template-columns:1fr;gap:28px;}
+  .ueber img{max-width:260px;} }
+
+/* ---------- Kontakt ---------- */
+#kontakt{background:var(--dunkel);color:#DED4C7;}
+#kontakt h2{color:#fff;}
+#kontakt p{color:#C0B5A6;}
+#kontakt .marke{color:var(--akzent-hell);}
+#kontakt .knopf{background:var(--akzent);color:#20180F;}
+#kontakt a.text{color:var(--akzent-hell);}
+
+footer{background:#1C1713;color:#8B7F70;padding:34px 0;font-size:13.5px;}
+footer .bahn{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+footer a{color:#A99B89;text-decoration:none;}
+
+/* ---------- Hinweis Abgrenzung ---------- */
+.hinweis{background:var(--creme-2);border:1px solid var(--linie);border-radius:14px;
+  padding:22px 24px;margin-top:34px;max-width:66ch;}
+.hinweis p{font-size:15.5px;color:var(--grau);margin:0;}
+
+@media (max-width:760px){
+  section{padding:64px 0;}
+  header.hero{padding:76px 0 70px;}
+  header.hero h1{font-size:38px;}
+  header.hero p{font-size:18.5px;}
+  h2{font-size:29px;}
+  .leitsatz{font-size:23px;}
+  p{font-size:16.5px;}
 }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="bahn kopf">
-    <a class="wortmarke" href="#oben">Michael <span>Deck</span></a>
-    <button class="nav-schalter" aria-expanded="false" aria-controls="hauptnav" aria-label="Menü öffnen">☰</button>
-    <nav id="hauptnav">
-      <a href="#angebot">Angebot</a>
-      <a href="#themen">Themen</a>
-      <a href="#praxis">Praxis</a>
-      <a href="#arbeiten">Arbeiten</a>
-      <a href="#ueber">Über mich</a>
-      <a class="knopf" href="#kontakt">Vortrag anfragen</a>
-    </nav>
+<nav>
+  <div class="bahn">
+    <span class="name">MICHAEL DECK</span>
+    <ul>
+      <li><a href="#berufung">Berufung</a></li>
+      <li><a href="#weg">Der Weg</a></li>
+      <li><a href="#tora">Tora</a></li>
+      <li><a href="#unternehmer">Unternehmer</a></li>
+      <li><a href="#begleitung">Begleitung</a></li>
+      <li><a href="#ueber">Über mich</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="bahn">
+    <div class="balken"></div>
+    <h1>Dein bisheriges Leben trägt <em>nicht mehr</em>?</h1>
+    <p>Ich begleite Menschen auf dem Weg zur Klarheit über ihre Berufung.</p>
+    <p>Mit Fragen, Stille und der Tora als Lebensschule.</p>
+    <div class="knopfzeile">
+      <a class="knopf" href="#kontakt">Gespräch anfragen</a>
+      <a class="knopf hell" href="#berufung">Was ich unter Berufung verstehe</a>
+    </div>
+    <p class="claim">Berufung erkennen. Aus Klarheit wirken.</p>
   </div>
 </header>
 
-<main id="oben">
-
-<!-- ============ HERO ============ -->
-<section class="hero">
+<!-- ================= DAS PROBLEM ================= -->
+<section id="problem">
   <div class="bahn">
-    <div>
-      <div class="auge">Künstliche Intelligenz · Vorträge · Begleitung</div>
-      <h1>KI im Mittelstand.<br>Von jemandem, der<br>sie <span>selbst einsetzt</span>.</h1>
-      <p class="unter">Ich bringe künstliche Intelligenz dorthin, wo sie bisher kaum ankommt:
-      in Handwerksbetriebe, Familienunternehmen und Klassenzimmer. Nicht als Vortrag über
-      Möglichkeiten, sondern als gezeigte Praxis.</p>
-      <div class="knoepfe">
-        <a class="knopf gross" href="#kontakt">Vortrag anfragen</a>
-        <a class="knopf gross rand" href="#angebot">Wie ich arbeite</a>
-      </div>
-      <div class="rollen">
-        <span>Geschäftsführer Impact4Entrepreneurship gGmbH</span>
-        <span>Gesellschafter eines Familienbetriebs</span>
-        <span>KI-Unterricht ab Klasse 6</span>
-      </div>
+    <div class="marke">Worum es geht</div>
+    <h2>Äußerlich funktioniert vieles. Innerlich fehlt die Weite.</h2>
+    <p class="gross">Die Menschen, die zu mir kommen, haben selten ein klar umrissenes
+      Problem. Sie haben etwas anderes: das Gefühl, dass ihr bisheriges Leben sie nicht
+      mehr trägt. Die Rollen, die Sicherheiten, manchmal sogar die Erfolge.</p>
+
+    <div class="stimmen">
+      <div class="stimme"><p>„Mein bisheriges Leben trägt nicht mehr.“</p></div>
+      <div class="stimme"><p>„Ich weiß nicht mehr, wofür ich das alles mache.“</p></div>
+      <div class="stimme"><p>„Ich habe viel erreicht, aber weiß nicht, wozu ich hier bin.“</p></div>
+      <div class="stimme"><p>„Ich bin offen für Gott. Aber die Kirche erreicht mich nicht.“</p></div>
     </div>
-    <div class="bild"><img src="images/michael-frei.png" alt="Michael Deck"></div>
+
+    <p style="margin-top:34px;">Wenn dir einer dieser Sätze bekannt vorkommt, bist du hier
+      richtig. Es braucht keinen Glauben als Voraussetzung. Es braucht nur die
+      Bereitschaft, das Bisherige noch einmal zu prüfen.</p>
   </div>
 </section>
 
-<div class="streifen">
+<!-- ================= BERUFUNG ================= -->
+<section id="berufung">
   <div class="bahn">
-    <div><b>6</b><small>veröffentlichte KI-Arbeiten</small></div>
-    <div><b>1</b><small>Kurs zu KI und Gründung</small></div>
-    <div><b>Kl. 6</b><small>ab dieser Stufe unterrichtet</small></div>
-    <div><b>2</b><small>Unternehmen als Testfeld</small></div>
-  </div>
-</div>
+    <div class="marke">Berufung</div>
+    <h2>Nicht das, was du kannst. Das, wozu du gerufen bist.</h2>
 
-<!-- ============ LEITSATZ ============ -->
-<section>
-  <div class="bahn auf">
-    <div class="leitsatz">
-      <p>Was ein Unternehmen tun <em style="font-style:normal;color:var(--flieder)">kann</em>,
-      ist bald keine Frage mehr.<br>
-      <span>Wofür es das tut, beantwortet keine Maschine.</span></p>
-      <div class="wer">Der Satz, an dem sich meine Arbeit misst</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ANGEBOT ============ -->
-<section id="angebot" class="hell">
-  <div class="bahn">
-    <div class="kopfzeile auf">
-      <div class="auge">Angebot</div>
-      <h2>Drei Formate, ein Anspruch.</h2>
-      <p class="gross">Am Ende soll jemand etwas anders machen als vorher – nicht nur mehr
-      wissen. Deshalb arbeite ich in allen drei Formaten mit echten Fällen.</p>
+    <div class="eng">
+      <p>Berufung wird oft mit Begabung verwechselt. Oder mit einem Wunsch. Oder mit
+        einer guten Idee. Sie ist etwas anderes.</p>
     </div>
 
-    <div class="angebote auf">
-      <div class="angebot">
-        <div class="nr">1</div>
-        <h3>Keynote und Impuls</h3>
-        <p>Für Unternehmerkreise, Kammern, Verbände und Kongresse. Mit dem, was tatsächlich
-        schon läuft – nicht mit dem, was Anbieter versprechen.</p>
-        <ul>
-          <li>30 bis 60 Minuten, anschließend Gespräch</li>
-          <li>Live-Demonstration statt Folienschlacht</li>
-          <li>Auf Wunsch auf die Branche zugeschnitten</li>
-        </ul>
-      </div>
-      <div class="angebot">
-        <div class="nr">2</div>
-        <h3>Projektwoche und Unterricht</h3>
-        <p>Für Schulen und Hochschulen. KI nicht als Bedrohung erklärt, sondern
-        ausprobiert – mit fertigem Lehrerskript und Material.</p>
-        <ul>
-          <li>Projektwochen ab Klasse 6</li>
-          <li>Wirtschaftsbildung mit KI-Bezug</li>
-          <li>Fortbildung für Lehrkräfte</li>
-        </ul>
-      </div>
-      <div class="angebot">
-        <div class="nr">3</div>
-        <h3>Begleitung im Unternehmen</h3>
-        <p>Für Betriebe, die nicht wissen, wo sie anfangen sollen. Wir suchen die zwei, drei
-        Stellen, an denen KI heute schon Zeit spart – und setzen sie um.</p>
-        <ul>
-          <li>Bestandsaufnahme entlang echter Abläufe</li>
-          <li>Umsetzung statt Konzeptpapier</li>
-          <li>Klärung von Datenschutz und Verantwortung</li>
-        </ul>
-      </div>
+    <div class="leitsatz">Berufung ist der Ruf Gottes, wozu ich hier auf die Erde
+      geschickt wurde.</div>
+
+    <div class="eng">
+      <p>Das klingt groß. In Wahrheit ist es sehr konkret. Berufung wird nicht erfunden.
+        Sie wird freigelegt. Sie liegt meist längst in einem Menschen – verdeckt von
+        Dingen, die sich über Jahre darübergelegt haben.</p>
+    </div>
+
+    <h3 style="margin-top:38px;">Was Berufung verdeckt</h3>
+    <ul class="punkte">
+      <li><strong>Angst</strong> – vor dem Verlust dessen, was man aufgebaut hat.</li>
+      <li><strong>Die Erwartungen anderer</strong> – und wie leise die eigene Stimme daneben wird.</li>
+      <li><strong>Status</strong> – der Preis, den man dafür zahlt, jemand zu bleiben.</li>
+      <li><strong>Geld</strong> – und die Rechnungen, die man sich selbst aufmacht.</li>
+      <li><strong>Selbsttäuschung</strong> – die bequemste aller Antworten.</li>
+      <li><strong>Die Bindung an die eigene Vergangenheit</strong> – das, was einmal richtig war.</li>
+    </ul>
+
+    <div class="hinweis">
+      <p><strong>Was ich nicht tue:</strong> Ich sage dir nicht, was Gott von dir will.
+        Das steht mir nicht zu. Ich höre zu, frage und schaffe einen Raum, in dem du
+        selbst klarer erkennst, wozu du gerufen bist.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ THEMEN ============ -->
-<section id="themen">
+<!-- ================= DER WEG ================= -->
+<section id="weg">
   <div class="bahn">
-    <div class="kopfzeile auf">
-      <div class="auge">Themen</div>
-      <h2>Worüber ich spreche.</h2>
-      <p class="gross">Vier Felder, in denen ich selbst arbeite – und über die ich deshalb
-      nicht nur referieren, sondern berichten kann.</p>
+    <div class="marke">Der Weg</div>
+    <h2>Vom Exil in die Weite.</h2>
+    <div class="eng">
+      <p class="gross">Das Bild, das meine Arbeit trägt, ist nicht Erfolg. Es ist der
+        Auszug. Ein Mensch ist nicht deshalb am falschen Ort, weil äußerlich alles
+        schlecht wäre – sondern weil er sich von seiner eigentlichen Sendung entfernt hat.</p>
+      <p>Das hebräische Wort für Ägypten heißt <em>Mizrajim</em>. Es kommt von
+        <em>mezar</em>: Enge. Der Weg heraus ist immer derselbe – aus der Enge in die Weite.</p>
     </div>
 
-    <div class="themen auf">
-      <div class="thema">
-        <div class="fuer">Für Unternehmer</div>
-        <h3>KI im Handwerk und Mittelstand</h3>
-        <p>Was heute wirklich funktioniert – Angebote, Auswertungen, Texte, Bilder – und was
-        noch teure Spielerei ist.</p>
+    <div class="weg">
+      <div class="stufe">
+        <div class="nr">01</div>
+        <div class="inhalt">
+          <h3>Exil</h3>
+          <p>Das bisherige Leben trägt nicht mehr. Rollen, Angst, Status, Geld und die
+             Erwartungen anderer engen ein.</p>
+        </div>
       </div>
-      <div class="thema">
-        <div class="fuer">Für Gründer</div>
-        <h3>Nebenberuflich gründen mit KI</h3>
-        <p>Wie sich mit heutigen Werkzeugen ein Geschäftsmodell prüfen lässt, bevor man
-        Geld und Jahre investiert.</p>
+      <div class="stufe">
+        <div class="nr">02</div>
+        <div class="inhalt">
+          <h3>Unterbrechung</h3>
+          <p>Zuhören, Fragen und Stille schaffen einen Raum, in dem das Gewohnte seine
+             Macht verliert.</p>
+        </div>
       </div>
-      <div class="thema">
-        <div class="fuer">Für Schulen</div>
-        <h3>KI verstehen statt verbieten</h3>
-        <p>Wie Schülerinnen und Schüler lernen, mit KI zu arbeiten – und wo sie ihr besser
-        nicht glauben.</p>
+      <div class="stufe">
+        <div class="nr">03</div>
+        <div class="inhalt">
+          <h3>Spiegel</h3>
+          <p>Die Tora und die Deutungsmodelle der jüdischen Überlieferung machen innere
+             Muster sichtbar und geben dem Weg eine Sprache.</p>
+        </div>
       </div>
-      <div class="thema">
-        <div class="fuer">Für Entscheider</div>
-        <h3>Verantwortung, wenn die Maschine mitdenkt</h3>
-        <p>Wer haftet, wer entscheidet, was bleibt beim Menschen. Die Frage, die in den
-        meisten KI-Vorträgen fehlt.</p>
+      <div class="stufe">
+        <div class="nr">04</div>
+        <div class="inhalt">
+          <h3>Weite</h3>
+          <p>Klarheit stellt sich nicht nur gedanklich ein. Sie stellt sich als Freiheit
+             ein. Daran erkennst du, dass es stimmt.</p>
+        </div>
+      </div>
+      <div class="stufe">
+        <div class="nr">05</div>
+        <div class="inhalt">
+          <h3>Wirkung</h3>
+          <p>Die erkannte Berufung wird gelebt – persönlich, und bei Unternehmern in einer
+             konkreten Unternehmung.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ PRAXIS ============ -->
-<section id="praxis" class="hell">
+<!-- ================= DIE METHODE ================= -->
+<section id="methode">
   <div class="bahn">
-    <div class="kopfzeile auf">
-      <div class="auge">Praxis</div>
-      <h2>Wo ich es selbst mache.</h2>
-      <p class="gross">Ich spreche über nichts, was ich nicht im eigenen Betrieb oder vor
-      einer echten Klasse ausprobiert habe.</p>
+    <div class="marke">Wie ich arbeite</div>
+    <h2>Drei Dinge. Mehr braucht es nicht.</h2>
+    <div class="eng">
+      <p>Meine Arbeitsweise ist kein System, das man kaufen kann. Ihre Kraft liegt in der
+        Reduktion.</p>
     </div>
 
-    <div class="stationen auf">
-      <div class="station">
-        <div class="jahr">Handwerk · Raum Magdeburg</div>
-        <h3>Ein Familienbetrieb als Testfeld</h3>
-        <p>Als Gesellschafter eines Handwerksunternehmens setze ich KI dort ein, wo es
-        Widerstand gibt: bei Auswertungen, Angeboten und Kundentexten. Was hier nicht
-        funktioniert, empfehle ich nicht weiter.</p>
+    <div class="karten">
+      <div class="karte">
+        <span class="zahl">01</span>
+        <h3>Fragen</h3>
+        <p>Ich dränge dir keine Antwort auf. Ich stelle die Frage so, dass sichtbar wird,
+           was sich über deine Berufung gelegt hat: Selbsttäuschung, fremde Erwartungen,
+           alte Rollen.</p>
       </div>
-      <div class="station">
-        <div class="jahr">Schule · ab Klasse 6</div>
-        <h3>Unterricht und Projektwochen</h3>
-        <p>Ein ausgearbeitetes Lehrerskript, eine Projektwochen-Keynote und Unterrichts&shy;einheiten
-        zu Wirtschaft, Geld und KI – erprobt an Schulen, unter anderem in Leipzig und Berlin.</p>
+      <div class="karte">
+        <span class="zahl">02</span>
+        <h3>Stille</h3>
+        <p>Wir lösen nicht sofort. Stille trennt vom ständigen Lärm und lässt das
+           Wesentliche hörbar werden. Das ist kein Umweg. Das ist der Weg.</p>
       </div>
-      <div class="station">
-        <div class="jahr">Gemeinnützig · Impact4Entrepreneurship</div>
-        <h3>Bildung mit Haltung</h3>
-        <p>In der gGmbH verbinde ich beides: die technische Seite und die Frage, wofür man
-        das Ganze eigentlich einsetzt. Ohne diese zweite Hälfte wäre KI nur ein
-        Effizienzwerkzeug.</p>
+      <div class="karte">
+        <span class="zahl">03</span>
+        <h3>Die alten Texte</h3>
+        <p>Tora und die jüdische Deutungstradition dienen als Landkarten der Seele – nicht
+           als Schmuck und nicht als Geheimwissen. Fachbegriffe erkläre ich. Vorwissen
+           setze ich nicht voraus.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ ARBEITEN ============ -->
-<section id="arbeiten">
+<!-- ================= TORA ================= -->
+<section id="tora">
   <div class="bahn">
-    <div class="kopfzeile auf">
-      <div class="auge">Veröffentlicht</div>
-      <h2>Was ich dazu veröffentliche.</h2>
-      <p class="gross">Texte und Videos – frei zugänglich, ohne Anmeldung.</p>
+    <div class="marke">Worauf es letztlich ankommt</div>
+    <h2>Die Tora als Lebensschule.</h2>
+
+    <div class="eng">
+      <p class="gross">Die Tora ist nicht mein Produkt. Sie ist mein Weg zur Antwort.
+        Menschen wachen morgens nicht mit dem Gedanken auf, sie bräuchten eine
+        Schriftauslegung. Sie wachen mit der Frage auf: Wozu das alles?</p>
     </div>
-    <div class="arbeiten auf">
-      <a class="arbeit kanal" href="https://www.youtube.com/@michaeldeck-ki" target="_blank" rel="noopener">
-        <div class="art">YouTube-Kanal</div>
-        <h3>Michael Deck &middot; Menschen, Unternehmen, KI</h3>
-        <p>Videos zu den Themen dieser Seite – was künstliche Intelligenz im Mittelstand
-        wirklich verändert und wo sie an Grenzen stößt.</p>
-      </a>
-      <a class="arbeit" href="https://impact4entrepreneurship.github.io/agi-2027/" target="_blank" rel="noopener">
-        <div class="art">Analyse</div>
-        <h3>AGI 2027</h3>
-        <p>Was hinter der Prognose steckt, dass allgemeine künstliche Intelligenz näher ist,
-        als die meisten annehmen.</p>
-      </a>
-      <a class="arbeit" href="https://impact4entrepreneurship.github.io/ki-stresstest-marktwirtschaft/" target="_blank" rel="noopener">
-        <div class="art">Essay</div>
-        <h3>KI als Stresstest der Marktwirtschaft</h3>
-        <p>Was passiert mit Wettbewerb, Arbeit und Preisbildung, wenn Denken billig wird.</p>
-      </a>
-      <a class="arbeit" href="https://impact4entrepreneurship.github.io/ki-nebenberuflich-gruenden/" target="_blank" rel="noopener">
-        <div class="art">Leitfaden</div>
-        <h3>Nebenberuflich gründen mit KI</h3>
-        <p>Der praktische Weg von der Idee zum geprüften Geschäftsmodell.</p>
-      </a>
-      <a class="arbeit" href="https://impact4entrepreneurship.github.io/massive-ki-durchbrueche/" target="_blank" rel="noopener">
-        <div class="art">Überblick</div>
-        <h3>Massive KI-Durchbrüche</h3>
-        <p>Was sich zuletzt tatsächlich verändert hat – und was nur nach Fortschritt aussah.</p>
-      </a>
-      <a class="arbeit" href="https://impact4entrepreneurship.github.io/neuromorphe-ki/" target="_blank" rel="noopener">
-        <div class="art">Technik</div>
-        <h3>Neuromorphe KI</h3>
-        <p>Warum die nächste Rechnergeneration dem Gehirn ähnlicher wird – und was das
-        für den Energiebedarf heißt.</p>
-      </a>
-      <a class="arbeit" href="https://impact4entrepreneurship.github.io/blissruption-kurs/" target="_blank" rel="noopener">
-        <div class="art">Kurs</div>
-        <h3>BLISSruption</h3>
-        <p>Unternehmertum aus Berufung – ein Online-Kurs, in dem KI das Werkzeug ist,
-        nicht das Thema.</p>
-      </a>
+
+    <div class="karten">
+      <div class="karte dunkel">
+        <h3>Anleitung</h3>
+        <p>Gottes Anleitung zum Leben – geschrieben für Menschen, die tatsächlich leben
+           müssen.</p>
+      </div>
+      <div class="karte dunkel">
+        <h3>Spiegel</h3>
+        <p>Ein Spiegel, in dem der Mensch sich selbst erkennt. Nicht immer angenehm. Aber
+           ehrlich.</p>
+      </div>
+      <div class="karte dunkel">
+        <h3>Landkarte</h3>
+        <p>Eine Landkarte der menschlichen Seele. Sie zeigt nicht nur, wo du bist – sondern
+           auch, wo es hingeht.</p>
+      </div>
+    </div>
+
+    <div class="eng" style="margin-top:40px;">
+      <h3>Kapitel für Kapitel</h3>
+      <p>Ich lege die Tora fortlaufend aus – von Bereschit bis Dewarim, unter einer
+        einzigen Frage: Was sagt dieser Text über die menschliche Seele, über Berufung,
+        über Exil und Befreiung?</p>
+      <p>Immer auf drei Ebenen: der Text, der innere Mensch, die konkrete Lebensbewegung.
+        Am Ende steht eine einzige Frage an dich.</p>
+      <p class="leise">Die Reihe wächst Folge für Folge. Sie ist als Lebenswerk angelegt,
+        nicht als Kampagne.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ ÜBER MICH ============ -->
-<section id="ueber" class="hell">
+<!-- ================= UNTERNEHMER ================= -->
+<section id="unternehmer">
   <div class="bahn">
-    <div class="ueber auf">
-      <div class="bild"><img src="images/michael-deck.jpg" alt="Michael Deck"></div>
+    <div class="marke">Unternehmer aus Berufung</div>
+    <h2>Warum existiert dein Unternehmen überhaupt?</h2>
+
+    <div class="eng">
+      <p class="gross">Für Unternehmer, Gründer und Führungskräfte wird dieselbe Frage sehr
+        konkret. Es geht nicht darum, ein besseres Unternehmen zu führen. Es geht um ein
+        Unternehmen, das aus Berufung gestaltet ist.</p>
+      <p>Ich habe selbst gegründet, geführt und Verantwortung getragen. Ich weiß, wie sich
+        die Frage anfühlt, wenn Zahlen stimmen und trotzdem etwas fehlt.</p>
+    </div>
+
+    <div class="leitsatz">Was soll durch dieses Unternehmen in die Welt kommen?</div>
+
+    <h3>Was daraus entstehen kann</h3>
+    <ul class="punkte">
+      <li>Eine <strong>Neugründung</strong>, die von Anfang an aus der richtigen Frage kommt.</li>
+      <li>Eine <strong>Neuausrichtung</strong> dessen, was schon da ist.</li>
+      <li>Ein <strong>Umbau</strong> von Kultur, Führung und Wirkung.</li>
+      <li>Manchmal auch: der Mut, etwas zu <strong>beenden</strong>, damit das Eigentliche beginnen kann.</li>
+    </ul>
+
+    <p style="margin-top:26px;" class="leise"><em>Unternehmen aus Berufung. Wirkung aus
+      Klarheit.</em></p>
+  </div>
+</section>
+
+<!-- ================= BEGLEITUNG ================= -->
+<section id="begleitung">
+  <div class="bahn">
+    <div class="marke">Die Begleitung</div>
+    <h2>Persönlich. Einzeln. Ohne Programm.</h2>
+
+    <div class="eng">
+      <p class="gross">Mein Hauptangebot ist keine Kursreihe und kein Coachingprogramm.
+        Es ist die persönliche Begleitung eines einzelnen Menschen in einer Zeit, in der
+        vieles offen ist.</p>
+    </div>
+
+    <div class="karten">
+      <div class="karte">
+        <h3>Für wen</h3>
+        <p>Menschen zwischen etwa fünfunddreißig und fünfundsechzig, die spürten, dass ihr
+           bisheriges Lebensmodell nicht mehr trägt. Mit oder ohne Glauben. Mit einem
+           Schwerpunkt auf Unternehmern und Führungskräften.</p>
+      </div>
+      <div class="karte">
+        <h3>Wie</h3>
+        <p>Einzelgespräche über einen längeren Zeitraum. Dazwischen Zeit zum Nachgehen.
+           Kein Wochenprogramm, keine Hausaufgaben, keine Abschlussurkunde.</p>
+      </div>
+      <div class="karte">
+        <h3>Wohin</h3>
+        <p>Vom nicht mehr tragenden Bisherigen zu Klarheit, Weite und einem nächsten
+           wahrhaftigen Schritt. Was dieser Schritt ist, weiß am Ende nur einer: du.</p>
+      </div>
+    </div>
+
+    <div class="hinweis">
+      <p><strong>Eine wichtige Abgrenzung.</strong> Berufungsbegleitung ist keine
+        Psychotherapie und ersetzt keine medizinische Behandlung. Existenzielle Krisen
+        können psychische Erkrankungen berühren. Wenn ich merke, dass du etwas anderes
+        brauchst als das, was ich anbiete, sage ich es dir.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ÜBER ================= -->
+<section id="ueber">
+  <div class="bahn">
+    <div class="marke">Über mich</div>
+    <div class="ueber">
+      <img src="bilder/portraet.jpg" alt="Michael Deck">
       <div>
-        <div class="auge">Über mich</div>
-        <p class="zitat">„Die meisten KI-Vorträge erklären, was möglich wäre. Ich zeige,
-        was ich gestern damit gemacht habe."</p>
-        <p>Ich bin Unternehmer, nicht Informatiker. Was ich über künstliche Intelligenz
-        sage, stammt nicht aus Studien, sondern aus der täglichen Anwendung – in einem
-        Handwerksbetrieb, in einer gemeinnützigen Gesellschaft und im Unterricht.</p>
-        <p>Das macht meine Perspektive schmaler als die eines Forschers und brauchbarer
-        für alle, die morgen früh eine Entscheidung treffen müssen. Ich kenne die
-        Werkzeuge, ich kenne ihre Grenzen, und ich weiß, woran Einführungsprojekte in
-        kleinen Betrieben tatsächlich scheitern.</p>
-        <p>Der zweite Teil meiner Arbeit ist die Frage, die dabei meist untergeht: Wofür
-        setzen wir das ein? Genau dort verbindet sich die Technik mit dem, woran ich
-        ohnehin arbeite.</p>
+        <h2 style="max-width:none;">Michael Deck</h2>
+        <p>Ich bin Unternehmer. Geschäftsführer einer gemeinnützigen GmbH, Gesellschafter
+          eines Familienbetriebes. Ich bin kein Theologe und kein Therapeut.</p>
+        <p>Was ich über die Tora sage, habe ich nicht studiert, um es zu lehren. Ich habe
+          es gesucht, weil ich Antworten brauchte. Seit Jahren lese ich die hebräische
+          Bibel mit den Augen der jüdischen Auslegungstradition – bei Lehrern wie Friedrich
+          Weinreb und in den Texten des Sohar und der Tanya.</p>
+        <p>Aus dieser Verbindung ist meine Arbeit entstanden: unternehmerische Erfahrung
+          auf der einen Seite, ein sehr alter Text auf der anderen. Beides gehört für mich
+          zusammen.</p>
+        <div class="leitsatz" style="margin:30px 0 0;font-size:24px;">Gott in dieser Welt
+          eine Wohnung bauen – auch durch unternehmerisches Tun.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ KONTAKT ============ -->
-<section id="kontakt" class="schluss">
+<!-- ================= KONTAKT ================= -->
+<section id="kontakt">
   <div class="bahn">
-    <div class="auge" style="color:var(--flieder);justify-content:center">Anfragen</div>
-    <h2>Sprechen wir darüber.</h2>
-    <p>Vortrag, Projektwoche oder Begleitung im Betrieb – schreiben Sie mir in wenigen
-    Sätzen, worum es geht und vor wem. Sie bekommen eine persönliche Antwort.</p>
-    <a class="knopf gross" href="mailto:michael.deck@impact4entrepreneurship.de?subject=Anfrage%20KI-Vortrag&amp;body=Guten%20Tag%20Herr%20Deck%2C%0A%0AAnlass%20und%20Publikum%3A%0A%0ATermin%20und%20Ort%3A%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen%0A">Anfrage schreiben</a>
-    <p class="leise">Oder direkt: <a href="mailto:michael.deck@impact4entrepreneurship.de">michael.deck@impact4entrepreneurship.de</a><br>
-    Auf YouTube: <a href="https://www.youtube.com/@michaeldeck-ki" target="_blank" rel="noopener">@michaeldeck-ki</a></p>
+    <div class="marke">Kontakt</div>
+    <h2>Ein Gespräch. Mehr braucht es nicht für den Anfang.</h2>
+    <div class="eng">
+      <p class="gross">Es gibt keinen Anmeldeprozess und kein Paket. Wenn dich etwas auf
+        dieser Seite berührt hat, schreib mir. Wir sprechen einmal miteinander und schauen,
+        ob es passt.</p>
+      <p>Wenn nicht, sage ich es dir ehrlich. Diese Arbeit ist nicht für alle. Aber für
+        die Richtigen.</p>
+    </div>
+    <div class="knopfzeile">
+      <a class="knopf" href="mailto:m.deck61@icloud.com?subject=Gespr%C3%A4ch%20zur%20Berufung">
+        Schreib mir</a>
+    </div>
+    <p style="margin-top:26px;font-size:15.5px;">
+      <a class="text" href="mailto:m.deck61@icloud.com">m.deck61@icloud.com</a>
+    </p>
   </div>
 </section>
-
-</main>
 
 <footer>
-  <div class="bahn fussleiste">
-    <div>© 2026 Michael Deck</div>
-    <div class="fuss-links">
-      <a href="#angebot">Angebot</a>
-      <a href="#themen">Themen</a>
-      <a href="#arbeiten">Arbeiten</a>
-      <a href="#kontakt">Kontakt</a>
-      <a href="https://www.youtube.com/@michaeldeck-ki" target="_blank" rel="noopener">YouTube</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-    </div>
+  <div class="bahn">
+    <span>Michael Deck · Berufung erkennen. Aus Klarheit wirken.</span>
+    <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
   </div>
 </footer>
 
-<script>
-const schalter=document.querySelector('.nav-schalter');
-const navi=document.getElementById('hauptnav');
-schalter.addEventListener('click',()=>{
-  const offen=navi.classList.toggle('offen');
-  schalter.setAttribute('aria-expanded',offen);
-  schalter.setAttribute('aria-label',offen?'Menü schließen':'Menü öffnen');
-});
-navi.addEventListener('click',e=>{if(e.target.tagName==='A')navi.classList.remove('offen');});
-const beobachter=new IntersectionObserver(e=>{
-  e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('da');beobachter.unobserve(x.target);}});
-},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.auf').forEach(el=>beobachter.observe(el));
-</script>
 </body>
 </html>
