@@ -162,6 +162,57 @@ footer a{color:#A99B89;text-decoration:none;}
   .leitsatz{font-size:23px;}
   p{font-size:16.5px;}
 }
+
+/* ---------- Video ---------- */
+.videorahmen{margin:34px 0 6px;border-radius:16px;overflow:hidden;
+  box-shadow:0 18px 44px rgba(38,32,27,.20);background:var(--dunkel);line-height:0;}
+.videorahmen video{width:100%;height:auto;aspect-ratio:16/9;display:block;}
+.videobu{font-size:14.5px;color:var(--grau);margin-top:12px;}
+
+/* ---------- Terminkasten ---------- */
+.termin{background:var(--dunkel);color:#EDE4D7;border-radius:16px;
+  padding:30px 32px;margin-top:34px;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:24px;}
+.termin .feld span{display:block;font-size:10.5px;letter-spacing:2.6px;
+  text-transform:uppercase;color:var(--akzent-hell);font-weight:600;margin-bottom:5px;}
+.termin .feld b{font-family:var(--serif);font-weight:700;font-size:23px;
+  color:#fff;line-height:1.2;display:block;}
+.termin .feld i{font-style:normal;font-size:15px;color:#BFB4A5;}
+
+/* ---------- Pop-up ---------- */
+.pop{position:fixed;inset:0;z-index:60;display:none;align-items:center;
+  justify-content:center;padding:22px;background:rgba(24,20,16,.72);
+  backdrop-filter:blur(5px);}
+.pop.auf{display:flex;}
+.pop-fenster{background:var(--creme);border-radius:20px;max-width:660px;width:100%;
+  max-height:92vh;overflow-y:auto;position:relative;
+  box-shadow:0 30px 70px rgba(0,0,0,.42);animation:popauf .32s ease both;}
+@keyframes popauf{from{opacity:0;transform:translateY(16px) scale(.985);}to{opacity:1;}}
+@media (prefers-reduced-motion:reduce){.pop-fenster{animation:none;}}
+.pop-fenster video{width:100%;height:auto;aspect-ratio:16/9;display:block;
+  border-radius:20px 20px 0 0;background:#000;}
+.pop-text{padding:26px 30px 30px;}
+.pop-text .marke{margin-bottom:10px;}
+.pop-text h3{font-family:var(--serif);font-weight:700;font-size:26px;
+  line-height:1.2;margin-bottom:10px;}
+.pop-text p{font-size:16.5px;color:var(--grau);margin-bottom:0;}
+.pop-fakten{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px;}
+.pop-fakten span{background:#fff;border:1px solid var(--linie);border-radius:20px;
+  padding:6px 14px;font-size:14px;color:var(--dunkel);}
+.pop-knoepfe{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+.pop-knoepfe .knopf{padding:14px 26px;font-size:16px;}
+.pop-spaeter{background:none;border:0;color:var(--grau);font-size:15px;
+  cursor:pointer;text-decoration:underline;padding:8px 4px;font-family:inherit;}
+.pop-spaeter:hover{color:var(--dunkel);}
+.pop-zu{position:absolute;top:12px;right:12px;width:38px;height:38px;border:0;
+  border-radius:50%;background:rgba(38,32,27,.62);color:#fff;font-size:21px;
+  line-height:1;cursor:pointer;z-index:2;}
+.pop-zu:hover{background:rgba(38,32,27,.86);}
+@media (max-width:760px){
+  .pop-text{padding:22px 22px 26px;}
+  .pop-text h3{font-size:22px;}
+  .termin{padding:24px;}
+}
 </style>
 </head>
 <body>
@@ -173,6 +224,7 @@ footer a{color:#A99B89;text-decoration:none;}
       <li><a href="#berufung">Berufung</a></li>
       <li><a href="#weg">Der Weg</a></li>
       <li><a href="#tora">Tora</a></li>
+      <li><a href="#sehnsucht">Sehnsucht</a></li>
       <li><a href="#unternehmer">Unternehmer</a></li>
       <li><a href="#begleitung">Begleitung</a></li>
       <li><a href="#ueber">Über mich</a></li>
@@ -405,6 +457,80 @@ footer a{color:#A99B89;text-decoration:none;}
   </div>
 </section>
 
+<!-- ================= SEHNSUCHT ================= -->
+<section id="sehnsucht">
+  <div class="bahn">
+    <div class="marke">Kurs in kleiner Runde</div>
+    <h2>Komm mit auf die Reise ins Land der Sehnsucht.</h2>
+
+    <div class="eng">
+      <p class="gross">Jeder von uns trägt eine Sehnsucht in sich. Nach Liebe. Nach
+        Freiheit. Nach Glück. Die Frage ist nur: Wie weit bin ich auf meiner Reise
+        bisher gekommen?</p>
+    </div>
+
+    <div class="videorahmen">
+      <video controls preload="none" playsinline
+             poster="video/reise-sehnsucht-poster.jpg" width="1280" height="720">
+        <source src="video/reise-sehnsucht.mp4" type="video/mp4">
+        Dein Browser kann dieses Video nicht abspielen –
+        <a href="video/reise-sehnsucht.mp4">hier lässt es sich herunterladen</a>.
+      </video>
+    </div>
+    <p class="videobu">Eine Minute darüber, worum es in diesem Kurs geht.</p>
+
+    <div class="karten">
+      <div class="karte">
+        <h3>Die eigene Landkarte</h3>
+        <p>Jeder gestaltet seine persönliche Landkarte der Sehnsucht. Wo war ich schon?
+           Wo stehe ich heute? Wo will ich hin?</p>
+      </div>
+      <div class="karte">
+        <h3>Geschichten, die tragen</h3>
+        <p>Wir hören von Menschen, die ihrer Sehnsucht gefolgt sind – und fragen, was
+           davon für den eigenen Weg taugt.</p>
+      </div>
+      <div class="karte">
+        <h3>Die Frage nach Gott</h3>
+        <p>Welche Rolle spielt Gott in dieser Geschichte? Wir geben keine fertige
+           Antwort vor. Wir finden es gemeinsam heraus.</p>
+      </div>
+    </div>
+
+    <div class="eng" style="margin-top:40px;">
+      <h3>Ein Abenteuer in die eigene Lebensgeschichte</h3>
+      <p>Birgit Nandzik und ich laden dich ein, mit uns zu suchen, was diese Sehnsucht
+        stillen kann. In kleiner Runde, ohne Programm zum Abarbeiten. Wir nehmen uns
+        Zeit füreinander.</p>
+      <p class="leise">Wir beginnen mit einem Schnuppertag. Danach entscheidet jeder für
+        sich, ob er den ganzen Weg mitgehen möchte.</p>
+    </div>
+
+    <div class="termin">
+      <div class="feld"><span>Schnuppertag</span><b>Samstag,<br>21. November 2026</b></div>
+      <div class="feld"><span>Beginn</span><b>9 Uhr</b><i>Bitte den Tag freihalten</i></div>
+      <div class="feld"><span>Ort</span><b>Groß Ammensleben</b><i>Genaue Adresse nach der Anmeldung</i></div>
+      <div class="feld"><span>Runde</span><b>Klein</b><i>Die Plätze sind begrenzt</i></div>
+    </div>
+
+    <div class="eng" style="margin-top:38px;">
+      <h3>Anmeldung</h3>
+      <p>Schreib mir kurz, dass du dabei bist. Der Knopf öffnet eine vorbereitete
+        E-Mail – Namen eintragen, absenden, fertig. Die genaue Adresse und alles
+        Weitere bekommst du von mir zurück.</p>
+
+      <div class="knopfzeile">
+        <a class="knopf" id="anmelden"
+           href="mailto:michael.deck@impact4entrepreneurship.de?subject=Anmeldung%20Schnuppertag%20%E2%80%93%20Reise%20ins%20Land%20der%20Sehnsucht&body=Hallo%20Michael%2C%0A%0Aich%20m%C3%B6chte%20zum%20Schnuppertag%20am%20Samstag%2C%2021.%20November%202026%2C%20um%209%20Uhr%20in%20Gro%C3%9F%20Ammensleben%20kommen.%0A%0AName%3A%0ATelefon%3A%0AIch%20komme%20mit%20%28Anzahl%20Personen%29%3A%0A%0ADas%20besch%C3%A4ftigt%20mich%20gerade%3A%0A%0A%0AHerzliche%20Gr%C3%BC%C3%9Fe%0A">
+          Zum Schnuppertag anmelden</a>
+      </div>
+
+      <p class="leise" style="margin-top:16px;font-size:15.5px;">Oder einfach schreiben an
+        <a class="text" href="mailto:michael.deck@impact4entrepreneurship.de">michael.deck@impact4entrepreneurship.de</a></p>
+    </div>
+  </div>
+</section>
+
 <!-- ================= UNTERNEHMER ================= -->
 <section id="unternehmer">
   <div class="bahn">
@@ -546,6 +672,89 @@ footer a{color:#A99B89;text-decoration:none;}
       <a href="datenschutz.html">Datenschutz</a></span>
   </div>
 </footer>
+
+<!-- ================= POP-UP: EINLADUNG ================= -->
+<div class="pop" id="pop" role="dialog" aria-modal="true"
+     aria-labelledby="pop-titel" hidden>
+  <div class="pop-fenster">
+    <button class="pop-zu" id="pop-zu" type="button"
+            aria-label="Einladung schließen">&times;</button>
+    <video id="pop-video" controls preload="none" playsinline
+           poster="video/reise-sehnsucht-poster.jpg" width="1280" height="720">
+      <source src="video/reise-sehnsucht.mp4" type="video/mp4">
+    </video>
+    <div class="pop-text">
+      <div class="marke">Einladung</div>
+      <h3 id="pop-titel">Komm mit auf die Reise ins Land der Sehnsucht.</h3>
+      <p>Birgit Nandzik und ich laden dich zu einem Kurs in kleiner Runde ein.
+         Wir beginnen mit einem Schnuppertag.</p>
+      <div class="pop-fakten">
+        <span>Samstag, 21. November 2026</span>
+        <span>9 Uhr</span>
+        <span>Groß Ammensleben</span>
+      </div>
+      <div class="pop-knoepfe">
+        <a class="knopf"
+           href="mailto:michael.deck@impact4entrepreneurship.de?subject=Anmeldung%20Schnuppertag%20%E2%80%93%20Reise%20ins%20Land%20der%20Sehnsucht&body=Hallo%20Michael%2C%0A%0Aich%20m%C3%B6chte%20zum%20Schnuppertag%20am%20Samstag%2C%2021.%20November%202026%2C%20um%209%20Uhr%20in%20Gro%C3%9F%20Ammensleben%20kommen.%0A%0AName%3A%0ATelefon%3A%0AIch%20komme%20mit%20%28Anzahl%20Personen%29%3A%0A%0ADas%20besch%C3%A4ftigt%20mich%20gerade%3A%0A%0A%0AHerzliche%20Gr%C3%BC%C3%9Fe%0A">
+          Zum Schnuppertag anmelden</a>
+        <button class="pop-spaeter" id="pop-spaeter" type="button">Erst mal in Ruhe ansehen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var MERKER = "einladung-sehnsucht-2026-11-21";   // neuer Wert = Pop-up erscheint wieder
+  var WARTEN = 2000;                                // Verzögerung in Millisekunden
+
+  var pop = document.getElementById("pop");
+  if (!pop) return;
+  var video = document.getElementById("pop-video");
+  var vorher = null;
+
+  function gesehen() {
+    try { return localStorage.getItem(MERKER) === "ja"; } catch (e) { return false; }
+  }
+  function merken() {
+    try { localStorage.setItem(MERKER, "ja"); } catch (e) { /* privates Fenster */ }
+  }
+
+  function auf() {
+    vorher = document.activeElement;
+    pop.hidden = false;
+    pop.classList.add("auf");
+    document.body.style.overflow = "hidden";
+    merken();
+    var zu = document.getElementById("pop-zu");
+    if (zu) zu.focus();
+  }
+
+  function schliessen(zielAnker) {
+    pop.classList.remove("auf");
+    pop.hidden = true;
+    document.body.style.overflow = "";
+    if (video && !video.paused) video.pause();
+    if (zielAnker) {
+      var ziel = document.getElementById("sehnsucht");
+      if (ziel) ziel.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else if (vorher && vorher.focus) {
+      vorher.focus();
+    }
+  }
+
+  document.getElementById("pop-zu").addEventListener("click", function () { schliessen(false); });
+  document.getElementById("pop-spaeter").addEventListener("click", function () { schliessen(true); });
+  pop.addEventListener("click", function (e) { if (e.target === pop) schliessen(false); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && pop.classList.contains("auf")) schliessen(false);
+  });
+
+  // Nicht zeigen, wenn schon gesehen oder wenn jemand gezielt einen Abschnitt ansteuert
+  if (gesehen() || window.location.hash) return;
+  window.setTimeout(auf, WARTEN);
+})();
+</script>
 
 </body>
 </html>
