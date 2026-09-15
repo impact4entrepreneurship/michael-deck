@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Michael Deck – Der Impact Circle: Unternehmertum aus Berufung</title>
+<meta name="description" content="Der Impact Circle: ein kleiner, kuratierter Kreis für Unternehmer und Gründer. Sechs Monate gemeinsames Lernen, persönliche Begleitung und Arbeit an realen unternehmerischen Entscheidungen.">
+<meta name="theme-color" content="#F2ECE4">
+<link rel="icon" href="symbol.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:'Playfair Display';src:url('schriften/playfair.woff2') format('woff2');
+  font-weight:400 800;font-style:normal;font-display:swap;}
+@font-face{font-family:'Playfair Display';src:url('schriften/playfair-kursiv.woff2') format('woff2');
+  font-weight:400 800;font-style:italic;font-display:swap;}
+@font-face{font-family:'Inter';src:url('schriften/inter.woff2') format('woff2');
+  font-weight:100 900;font-style:normal;font-display:swap;}
+
+:root{
+  --creme:#F2ECE4; --creme-2:#EFE7DC; --karte:#FFFFFF;
+  --dunkel:#26201B; --akzent:#A07D52; --akzent-hell:#C9A877;
+  --grau:#6B6259; --linie:#E3D9CC;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{background:var(--creme);color:var(--dunkel);font-family:var(--sans);
+  line-height:1.68;-webkit-font-smoothing:antialiased;}
+.bahn{max-width:1000px;margin:0 auto;padding:0 26px;}
+.eng{max-width:680px;}
+
+/* ---------- Navigation ---------- */
+nav{position:sticky;top:0;z-index:20;background:rgba(242,236,228,.93);
+  backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--linie);}
+nav .bahn{display:flex;align-items:center;justify-content:space-between;
+  gap:20px;height:62px;}
+nav .name{font-family:var(--serif);font-weight:700;font-size:16px;letter-spacing:1.6px;
+  white-space:nowrap;}
+nav ul{list-style:none;display:flex;gap:24px;overflow-x:auto;scrollbar-width:none;}
+nav ul::-webkit-scrollbar{display:none;}
+nav a{color:var(--grau);text-decoration:none;font-size:14px;white-space:nowrap;
+  padding:4px 0;border-bottom:1.5px solid transparent;}
+nav a:hover{color:var(--dunkel);border-bottom-color:var(--akzent-hell);}
+@media (max-width:860px){
+  nav .bahn{gap:14px;padding:0 18px;}
+  nav .name{font-size:13.5px;letter-spacing:1.2px;}
+  nav ul{gap:18px;-webkit-overflow-scrolling:touch;
+         mask-image:linear-gradient(to right,#000 88%,transparent);}
+  nav a{font-size:13.5px;}
+}
+
+/* ---------- Grundbausteine ---------- */
+section{padding:86px 0;}
+section:nth-of-type(even){background:var(--creme-2);}
+.marke{font-size:11.5px;font-weight:600;letter-spacing:3.2px;text-transform:uppercase;
+  color:var(--akzent);margin-bottom:16px;}
+h2{font-family:var(--serif);font-weight:700;font-size:38px;line-height:1.16;
+  margin-bottom:20px;max-width:22ch;}
+h3{font-family:var(--serif);font-weight:700;font-size:21px;margin-bottom:9px;}
+p{font-size:17.5px;margin-bottom:16px;max-width:66ch;}
+p.gross{font-size:20px;line-height:1.6;}
+.leise{color:var(--grau);}
+em{color:var(--akzent);font-style:italic;}
+strong{font-weight:600;}
+a.text{color:var(--akzent);}
+
+.knopf{display:inline-block;background:var(--dunkel);color:#F6F1EA;text-decoration:none;
+  border-radius:12px;padding:16px 30px;font-weight:600;font-size:16.5px;
+  transition:transform .15s ease;}
+.knopf:hover{transform:translateY(-2px);}
+.knopf.hell{background:transparent;color:var(--akzent);
+  box-shadow:inset 0 0 0 1.5px var(--akzent-hell);}
+.knopfzeile{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;}
+
+/* ---------- Hero ---------- */
+header.hero{background:var(--dunkel);color:#EFE7DC;padding:104px 0 96px;}
+header.hero .balken{width:64px;height:5px;background:var(--akzent);border-radius:3px;
+  margin-bottom:34px;}
+header.hero h1{font-family:var(--serif);font-weight:800;font-size:52px;line-height:1.1;
+  color:#fff;max-width:17ch;margin-bottom:28px;}
+header.hero h1 em{color:var(--akzent-hell);font-style:normal;}
+header.hero p{font-size:20px;color:#CDC3B6;max-width:56ch;margin-bottom:12px;}
+header.hero .claim{margin-top:40px;font-family:var(--serif);font-style:italic;
+  font-size:19px;color:var(--akzent-hell);}
+header.hero .knopf{background:var(--akzent);color:#20180F;}
+header.hero .knopf.hell{background:transparent;color:var(--akzent-hell);
+  box-shadow:inset 0 0 0 1.5px #5A4A38;}
+
+/* ---------- Der Kreis (Ring-Grafik) ---------- */
+.kreis-block{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;
+  margin-top:44px;}
+.ring{position:relative;width:min(430px,100%);aspect-ratio:1;margin:0 auto;}
+.ring .scheibe{position:absolute;inset:11%;border-radius:50%;border:1px dashed var(--akzent-hell);}
+.ring .mitte{position:absolute;inset:24%;border-radius:50%;background:var(--dunkel);color:#EFE7DC;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:20px;box-shadow:0 20px 50px rgba(38,32,27,.3);}
+.ring .mitte em{font-family:var(--serif);font-style:normal;font-size:12.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--akzent-hell);}
+.ring .mitte strong{font-family:var(--serif);font-size:clamp(16px,2.1vw,20px);font-weight:700;
+  color:#fff;margin-top:9px;line-height:1.28;max-width:15ch;}
+.ring-unterschrift{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--akzent);
+  text-align:center;margin-top:64px;max-width:32ch;margin-left:auto;margin-right:auto;line-height:1.4;}
+.knoten{position:absolute;top:50%;left:50%;width:126px;margin:-63px 0 0 -63px;
+  transform:rotate(var(--a)) translate(min(198px,42vw)) rotate(calc(-1 * var(--a)));
+  text-align:center;}
+.knoten b{display:flex;align-items:center;justify-content:center;
+  width:34px;height:34px;margin:0 auto 7px;border-radius:50%;
+  background:var(--karte);border:1.5px solid var(--akzent);color:var(--akzent);
+  font-family:var(--serif);font-size:15px;font-weight:700;line-height:1;}
+.knoten span{display:block;font-size:14px;font-weight:600;color:var(--dunkel);line-height:1.3;}
+.knoten small{display:block;font-size:12.5px;color:var(--grau);line-height:1.35;margin-top:3px;}
+
+.format-liste{list-style:none;}
+.format-liste li{display:flex;gap:16px;padding:15px 0;border-bottom:1px solid var(--linie);}
+.format-liste li:last-child{border-bottom:0;}
+.format-liste dt{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--akzent);
+  font-weight:600;flex:0 0 132px;}
+.format-liste dd{font-size:16px;}
+.ergebnis{margin-top:22px;background:var(--creme-2);border-radius:16px;padding:22px 24px;}
+.ergebnis p{font-size:16px;color:var(--dunkel);margin:0;max-width:none;}
+section.hell .ergebnis, section:nth-of-type(odd) .ergebnis{background:var(--creme-2);}
+
+/* ---------- Für wen ---------- */
+.wen{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px;}
+.wen-karte{border-radius:16px;padding:32px 32px;}
+.wen-karte.ja{background:var(--dunkel);color:#DED4C7;}
+.wen-karte.ja h3{color:#fff;}
+.wen-karte.nein{background:var(--karte);box-shadow:0 8px 26px rgba(38,32,27,.07);}
+.wen-karte ul{list-style:none;margin-top:10px;}
+.wen-karte li{position:relative;padding-left:24px;margin-bottom:12px;font-size:16px;
+  line-height:1.55;max-width:none;}
+.wen-karte.ja li{color:#C0B5A6;}
+.wen-karte.ja li::before{content:"";position:absolute;left:0;top:8px;width:10px;height:10px;
+  border-radius:50%;border:1.5px solid var(--akzent-hell);}
+.wen-karte.nein li{color:var(--grau);}
+.wen-karte.nein li::before{content:"";position:absolute;left:0;top:13px;width:10px;height:1.5px;
+  background:var(--akzent-hell);}
+@media (max-width:760px){ .wen{grid-template-columns:1fr;} }
+
+/* ---------- Karten ---------- */
+.karten{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:22px;
+  margin-top:34px;}
+.karte{background:var(--karte);border-radius:16px;padding:30px 30px;
+  box-shadow:0 8px 26px rgba(38,32,27,.07);}
+.karte p{font-size:16.5px;color:var(--grau);margin-bottom:0;max-width:none;}
+
+/* ---------- Der Weg hinein ---------- */
+.weg{margin-top:40px;}
+.stufe{display:flex;gap:26px;padding:26px 0;border-top:1px solid var(--linie);}
+.stufe:last-child{border-bottom:1px solid var(--linie);}
+.stufe .nr{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--akzent);
+  min-width:34px;flex:0 0 auto;padding-top:5px;}
+.stufe .inhalt{flex:1;}
+.stufe p{margin:0;font-size:16.5px;color:var(--grau);}
+
+/* ---------- Zitat gross ---------- */
+.leitsatz{font-family:var(--serif);font-size:28px;line-height:1.38;color:var(--dunkel);
+  border-left:4px solid var(--akzent-hell);padding-left:26px;margin:38px 0;max-width:26ch;}
+
+/* ---------- Randnotiz ---------- */
+.randnotiz{margin-top:24px;font-size:15.5px;color:var(--grau);
+  border-left:3px solid var(--akzent-hell);padding-left:18px;max-width:70ch;}
+
+/* ---------- Kontakt & Footer ---------- */
+#kontakt{background:var(--dunkel);color:#DED4C7;}
+#kontakt h2{color:#fff;}
+#kontakt p{color:#C0B5A6;}
+#kontakt .marke{color:var(--akzent-hell);}
+#kontakt .knopf{background:var(--akzent);color:#20180F;}
+#kontakt a.text{color:var(--akzent-hell);}
+
+footer{background:#1C1713;color:#8B7F70;padding:34px 0;font-size:13.5px;}
+footer .bahn{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+footer a{color:#A99B89;text-decoration:none;}
+
+@media (max-width:960px){
+  .kreis-block{grid-template-columns:1fr;gap:38px;}
+}
+@media (max-width:760px){
+  section{padding:64px 0;}
+  header.hero{padding:76px 0 70px;}
+  header.hero h1{font-size:36px;}
+  header.hero p{font-size:18px;}
+  h2{font-size:29px;}
+  .leitsatz{font-size:22px;}
+  p{font-size:16.5px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="bahn">
+    <span class="name">MICHAEL DECK</span>
+    <ul>
+      <li><a href="index.html">Berufung</a></li>
+      <li><a href="#kreis">Der Kreis</a></li>
+      <li><a href="#fuerwen">Für wen</a></li>
+      <li><a href="#wirkung">Wirkung</a></li>
+      <li><a href="#weg">Weg hinein</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="bahn">
+    <div class="balken"></div>
+    <h1>Zu welchem Menschen musst du <em>werden</em>?</h1>
+    <p>Der Impact Circle ist ein kleiner, kuratierter Kreis für Unternehmer und Gründer:
+      sechs Monate gemeinsames Lernen, persönliche Begleitung und Arbeit an realen
+      unternehmerischen Entscheidungen.</p>
+    <div class="knopfzeile">
+      <a class="knopf" href="#kontakt">Für den nächsten Kreis vormerken</a>
+      <a class="knopf hell" href="#kreis">Wie das abläuft</a>
+    </div>
+    <p class="claim">… damit das Unternehmen, das du baust, Segen stiftet.</p>
+  </div>
+</header>
+
+<!-- ================= DER KREIS ================= -->
+<section id="kreis">
+  <div class="bahn">
+    <div class="marke">Das Angebot</div>
+    <h2>Der Impact Circle</h2>
+    <div class="eng">
+      <p class="gross">Ein kleiner, kuratierter Kreis. Keine Massenveranstaltung. Sechs
+        Monate gemeinsames Lernen, persönliche Begleitung und Arbeit an realen
+        unternehmerischen Entscheidungen.</p>
+    </div>
+
+    <div class="kreis-block">
+      <div>
+        <div class="ring" role="img"
+             aria-label="Sechs Lernbewegungen um eine Mitte: Berufung, Person, Verantwortung, Unternehmen, Entscheidung, Sendung. In der Mitte die Leitfrage: Zu welchem Menschen muss ich werden, damit das Unternehmen, das ich baue, Segen stiftet?">
+          <div class="scheibe" aria-hidden="true"></div>
+          <div class="mitte">
+            <em>Die Frage in der Mitte</em>
+            <strong>Zu welchem Menschen muss ich werden?</strong>
+          </div>
+          <div class="knoten" style="--a:-90deg"><b>1</b><span>Berufung</span><small>Warum soll dieses Unternehmen existieren?</small></div>
+          <div class="knoten" style="--a:-30deg"><b>2</b><span>Person</span><small>Wer werde ich durch Macht, Risiko und Scheitern?</small></div>
+          <div class="knoten" style="--a:30deg"><b>3</b><span>Verantwortung</span><small>Wem gegenüber bin ich rechenschaftspflichtig?</small></div>
+          <div class="knoten" style="--a:90deg"><b>4</b><span>Unternehmen</span><small>Wie werden Werte in Produkt, Kultur und Kapital konkret?</small></div>
+          <div class="knoten" style="--a:150deg"><b>5</b><span>Entscheidung</span><small>Wie erkenne ich Grenzen und notwendige Neins?</small></div>
+          <div class="knoten" style="--a:210deg"><b>6</b><span>Sendung</span><small>Welche Wirkung soll dieses Unternehmen ermöglichen?</small></div>
+        </div>
+        <p class="ring-unterschrift">… damit das Unternehmen, das du baust, Segen stiftet.</p>
+      </div>
+
+      <div>
+        <h3 style="margin-bottom:14px">So läuft es</h3>
+        <dl class="format-liste">
+          <li><dt>Dauer</dt><dd>Sechs Monate, zwei gemeinsame Termine im Monat</dd></li>
+          <li><dt>Größe</dt><dd>Acht bis zwölf Menschen – klein genug für echte Begleitung</dd></li>
+          <li><dt>Termine</dt><dd>Zwölf Gruppentermine à zwei Stunden, dazu drei persönliche Gespräche</dd></li>
+          <li><dt>Arbeitsweise</dt><dd>Lehre, Textarbeit, Fallbesprechung, Peer-Beratung, Stille – und konkrete Entscheidungen</dd></li>
+          <li><dt>Begleitung</dt><dd>Michael Deck, Unternehmer und ausgebildeter geistlicher Begleiter</dd></li>
+        </dl>
+        <div class="ergebnis">
+          <p><strong>Am Ende steht kein Zertifikat</strong>, sondern eine persönliche
+            Unternehmer-Charta und eine Unternehmens-Charta – übersetzt in reale
+            Entscheidungen für Produkt, Kultur, Kapital und Führung.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FÜR WEN ================= -->
+<section id="fuerwen">
+  <div class="bahn">
+    <div class="marke">Für wen</div>
+    <h2>Bewusst nicht für alle.</h2>
+    <div class="eng">
+      <p class="gross">Für Menschen, die ein Unternehmen gründen, aufbauen oder neu
+        ausrichten und sich nicht mit der Frage zufriedengeben, ob etwas funktioniert –
+        sondern auch wissen wollen, ob es richtig ist.</p>
+    </div>
+
+    <div class="wen">
+      <div class="wen-karte ja">
+        <h3>Hier bist du richtig, wenn du …</h3>
+        <ul>
+          <li>nicht nur Wissen suchst, sondern Orientierung;</li>
+          <li>bereit bist, die eigene Person und Motivation kritisch zu prüfen;</li>
+          <li>Verantwortung nicht als Marketingbegriff verwenden willst;</li>
+          <li>offen bist für philosophische, ethische und geistliche Fragen;</li>
+          <li>eine konkrete Gründungs-, Führungs- oder Entscheidungssituation mitbringst.</li>
+        </ul>
+      </div>
+      <div class="wen-karte nein">
+        <h3>Noch nicht der richtige Ort, wenn du …</h3>
+        <ul>
+          <li>vor allem Methoden, Vorlagen und Checklisten suchst;</li>
+          <li>eine schnelle Antwort erwartest statt einer ehrlichen Frage;</li>
+          <li>ein Zertifikat für den Lebenslauf brauchst;</li>
+          <li>gerade keine reale unternehmerische Entscheidung vor dir hast;</li>
+          <li>lieber anonym in einer großen Gruppe bleiben möchtest.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WIRKUNG ================= -->
+<section id="wirkung">
+  <div class="bahn">
+    <div class="marke">Wirkung</div>
+    <h2>Woran wir uns messen lassen.</h2>
+    <div class="eng">
+      <p class="gross">Am Ende steht nicht nur ein besseres Geschäftsmodell. Es steht ein
+        klareres Verständnis davon, wofür du Verantwortung trägst – und eine konkrete
+        Charta dafür, wie diese Verantwortung in deinem Unternehmen sichtbar wird.</p>
+    </div>
+
+    <div class="karten">
+      <div class="karte">
+        <h3>Person</h3>
+        <p>Wirst du klarer, wahrhaftiger, verantwortungsfähiger und freier in deinen
+          Entscheidungen?</p>
+      </div>
+      <div class="karte">
+        <h3>Unternehmen</h3>
+        <p>Werden diese Haltungen in Governance, Kultur, Produkt, Kundenbeziehungen,
+          Kapital und im Umgang mit Mitarbeitern sichtbar?</p>
+      </div>
+      <div class="karte">
+        <h3>Multiplikation</h3>
+        <p>Entstehen Menschen und Organisationen, die die Idee weitertragen – ohne
+          dauernde Abhängigkeit von mir?</p>
+      </div>
+    </div>
+    <p class="randnotiz">Reichweite ohne Veränderung wäre für mich kein Erfolg.</p>
+  </div>
+</section>
+
+<!-- ================= WEG HINEIN ================= -->
+<section id="weg">
+  <div class="bahn">
+    <div class="marke">Der Weg hinein</div>
+    <h2>Ein Gespräch statt eines Formulars.</h2>
+    <div class="eng">
+      <p class="gross">Die Plätze sind begrenzt und die Arbeit ist persönlich. Deshalb
+        prüfen beide Seiten, ob es passt.</p>
+    </div>
+
+    <div class="weg">
+      <div class="stufe">
+        <div class="nr">01</div>
+        <div class="inhalt">
+          <h3>Du meldest dich</h3>
+          <p>Schreib mir in wenigen Sätzen, wer du bist, woran du gerade arbeitest und
+            was du dir erhoffst. Du bekommst binnen drei Werktagen eine persönliche
+            Antwort.</p>
+        </div>
+      </div>
+      <div class="stufe">
+        <div class="nr">02</div>
+        <div class="inhalt">
+          <h3>Wir sprechen miteinander</h3>
+          <p>In einem vertraulichen Erstgespräch klären wir gemeinsam, ob der Impact
+            Circle der richtige Ort für dich ist – und ob du zur Gruppe passt.</p>
+        </div>
+      </div>
+      <div class="stufe">
+        <div class="nr">03</div>
+        <div class="inhalt">
+          <h3>Wir entscheiden gemeinsam</h3>
+          <p>Danach entscheidest du. Und ich auch. Wer aufgenommen wird, beginnt mit
+            einem persönlichen Aufnahmegespräch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KONTAKT ================= -->
+<section id="kontakt">
+  <div class="bahn">
+    <div class="marke">Nächster Schritt</div>
+    <h2>Du musst nicht schon alle Antworten haben.</h2>
+    <div class="eng">
+      <p class="gross">Aber du solltest bereit sein, die richtigen Fragen ernst zu
+        nehmen. Schreib mir in wenigen Sätzen, woran du arbeitest – ich melde mich
+        persönlich.</p>
+    </div>
+    <div class="knopfzeile">
+      <a class="knopf" href="mailto:michael.deck@impact4entrepreneurship.de?subject=Impact%20Circle%20%E2%80%93%20Interesse&body=Guten%20Tag%20Michael%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20den%20n%C3%A4chsten%20Impact%20Circle.%0A%0AWer%20ich%20bin%3A%0A%0AWoran%20ich%20gerade%20arbeite%3A%0A%0AWas%20ich%20mir%20erhoffe%3A%0A%0AHerzliche%20Gr%C3%BC%C3%9Fe%0A">
+        Für den nächsten Impact Circle vormerken</a>
+    </div>
+    <p style="margin-top:26px;font-size:15.5px;">Oder direkt:
+      <a class="text" href="mailto:michael.deck@impact4entrepreneurship.de">michael.deck@impact4entrepreneurship.de</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="bahn">
+    <span>Michael Deck · Unternehmer aus Berufung.</span>
+    <span><a href="index.html">Berufung</a> ·
+      <a href="impressum.html">Impressum</a> ·
+      <a href="datenschutz.html">Datenschutz</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
