@@ -562,6 +562,11 @@ header.hero .bildband{margin:48px 0 0;box-shadow:0 14px 40px rgba(0,0,0,.45);}
   p.addEventListener('click',function(e){ if(e.target===p) zu(); });
   p.querySelectorAll('[data-zu]').forEach(function(a){ a.addEventListener('click',zu); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&p.classList.contains('offen')) zu(); });
+  // Nur einmal pro Besuch: merkt sich im Browser-Tab, dass es schon gezeigt wurde
+  var schon=false;
+  try{ schon=sessionStorage.getItem('kurs-popup')==='1'; }catch(e){}
+  if(schon) return;
+  try{ sessionStorage.setItem('kurs-popup','1'); }catch(e){}
   setTimeout(auf,800);
 })();
 </script>
