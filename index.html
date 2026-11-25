@@ -197,6 +197,36 @@ footer a{color:#A99B89;text-decoration:none;}
 .frage{font-family:var(--serif);font-size:21px;line-height:1.45;margin:6px 0 12px;max-width:34ch;}
 .frage.alt{color:var(--grau);}
 @media (max-width:760px){ .frage{font-size:19px;} }
+
+/* ---------- Bildbänder ---------- */
+.bildband{margin:0 0 38px;border-radius:16px;overflow:hidden;line-height:0;
+  box-shadow:0 14px 40px rgba(38,32,27,.18);}
+.bildband img{width:100%;height:auto;aspect-ratio:16/8;object-fit:cover;display:block;}
+header.hero .bildband{margin:48px 0 0;box-shadow:0 14px 40px rgba(0,0,0,.45);}
+@media (max-width:760px){ .bildband{margin-bottom:28px;border-radius:12px;}
+  .bildband img{aspect-ratio:16/10;} }
+
+/* ---------- Popup ---------- */
+.popup{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;
+  padding:20px;background:rgba(28,23,19,.72);backdrop-filter:blur(4px);}
+.popup.offen{display:flex;animation:pe .35s ease;}
+@keyframes pe{from{opacity:0}to{opacity:1}}
+.popup .box{position:relative;background:var(--creme);border-radius:18px;max-width:520px;
+  width:100%;max-height:calc(100vh - 40px);overflow-y:auto;
+  box-shadow:0 24px 70px rgba(0,0,0,.45);}
+.popup .box img{width:100%;aspect-ratio:16/8;object-fit:cover;display:block;}
+.popup .inh{padding:28px 32px 32px;}
+.popup .marke{margin-bottom:10px;}
+.popup h2{font-size:30px;margin-bottom:12px;max-width:none;}
+.popup p{font-size:16px;margin-bottom:12px;}
+.popup .preis{font-family:var(--serif);font-weight:700;font-size:19px;margin:16px 0 0;}
+.popup .preis span{font-family:var(--sans);font-weight:400;font-size:14px;color:var(--grau);}
+.popup .knopfzeile{margin-top:20px;}
+.popup .knopf{padding:14px 24px;font-size:15.5px;}
+.popup .zu{position:absolute;top:12px;right:12px;width:38px;height:38px;border:0;border-radius:50%;
+  background:rgba(28,23,19,.62);color:#fff;font-size:22px;line-height:1;cursor:pointer;}
+.popup .zu:hover{background:var(--dunkel);}
+@media (max-width:560px){ .popup .inh{padding:22px 22px 26px;} .popup h2{font-size:25px;} }
 </style>
 </head>
 <body>
@@ -208,6 +238,7 @@ footer a{color:#A99B89;text-decoration:none;}
       <li><a href="#denken">Hebräisch denken</a></li>
       <li><a href="#tora">Tora</a></li>
       <li><a href="tageslosung.html">Tageslosung</a></li>
+      <li><a href="#kurs">Kurs</a></li>
       <li><a href="#ueber">Über mich</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
@@ -226,12 +257,14 @@ footer a{color:#A99B89;text-decoration:none;}
       <a class="knopf hell" href="#kontakt">Kontakt aufnehmen</a>
     </div>
     <p class="claim">Verstehen fragt: Was sagt der Text?</p>
+    <div class="bildband"><img src="bilder/hero.jpg" alt="Aufgerollte Torarolle im Kerzenlicht" loading="lazy"></div>
   </div>
 </header>
 
 <!-- ================= HEBRÄISCH DENKEN ================= -->
 <section id="denken">
   <div class="bahn">
+    <div class="bildband"><img src="bilder/denken.jpg" alt="Aufgeschlagenes Buch mit hebräischen Buchstaben" loading="lazy"></div>
     <div class="marke">Der Kern</div>
     <h2>Der Unterschied zwischen Verstehen und Denken.</h2>
     <div class="eng">
@@ -318,6 +351,7 @@ footer a{color:#A99B89;text-decoration:none;}
 <!-- ================= TORA ================= -->
 <section id="tora">
   <div class="bahn">
+    <div class="bildband"><img src="bilder/tora.jpg" alt="Handgeschriebene Torarolle" loading="lazy"></div>
     <div class="marke">Worauf es letztlich ankommt</div>
     <h2>Die Tora als Lebensschule.</h2>
 
@@ -374,6 +408,7 @@ footer a{color:#A99B89;text-decoration:none;}
 <!-- ================= TAGESLOSUNG ================= -->
 <section id="tageslosung">
   <div class="bahn">
+    <div class="bildband"><img src="bilder/tageslosung.jpg" alt="Kerze und hebräisches Gebetbuch am Morgen" loading="lazy"></div>
     <div class="marke">Hebräische Tageslosung</div>
     <h2>Jeden Tag ein Vers. Ein Wort. Ein Satz.</h2>
     <div class="eng">
@@ -383,6 +418,57 @@ footer a{color:#A99B89;text-decoration:none;}
       <p>Kurz genug für den Morgen, tief genug für den ganzen Tag.</p>
       <div class="knopfzeile">
         <a class="knopf" href="tageslosung.html">Zur Tageslosung</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KURS ================= -->
+<section id="kurs">
+  <div class="bahn">
+    <div class="bildband"><img src="bilder/kurs.jpg" alt="Ruhiger Schreibtisch mit hebräischer Bibel" loading="lazy"></div>
+    <div class="marke">Kurs per Zoom</div>
+    <h2>Bibel hebräisch verstehen.</h2>
+    <div class="eng">
+      <p class="gross">Zehn Lektionen, in denen du lernst, die hebräische Bibel so zu lesen,
+        wie sie sich selbst auslegt: genau, mehrschichtig und mit Blick auf dein eigenes Leben.</p>
+      <p>Du bekommst kein Fachwissen auf Vorrat. Du lernst, was im Text tatsächlich dasteht,
+        wie die jüdische Auslegung ihn aufschließt und woran du erkennst, was eine
+        Übersetzung verengt.</p>
+    </div>
+
+    <div class="termin">
+      <div class="feld"><span>Umfang</span><b>10 Lektionen</b></div>
+      <div class="feld"><span>Format</span><b>Zoom</b><i>live, je Lektion 1 Stunde</i></div>
+      <div class="feld"><span>Preis</span><b>49 € je Lektion</b><i>inkl. MwSt. · insgesamt 490 €</i></div>
+      <div class="feld"><span>Termine</span><b>Nach Absprache</b><i>einzeln, individuell planbar</i></div>
+    </div>
+
+    <div class="weg">
+      <div class="stufe"><div class="nr">1</div><div class="inhalt">
+        <h3>Einführung</h3></div></div>
+      <div class="stufe"><div class="nr">2</div><div class="inhalt">
+        <h3>Das gebrochene Wort</h3></div></div>
+      <div class="stufe"><div class="nr">3</div><div class="inhalt">
+        <h3>Prinzip 1:4</h3></div></div>
+      <div class="stufe"><div class="nr">4</div><div class="inhalt">
+        <h3>Das PaRDeS-Prinzip</h3></div></div>
+      <div class="stufe"><div class="nr">5</div><div class="inhalt">
+        <h3>Die Buchstaben des Lichts</h3></div></div>
+      <div class="stufe"><div class="nr">6–10</div><div class="inhalt">
+        <h3>Beispiele anhand der Tora</h3>
+        <p>Fünf Lektionen, in denen wir das Gelernte an Texten der Tora anwenden.</p></div></div>
+    </div>
+
+    <div class="eng" style="margin-top:36px;">
+      <h3>So läuft die Anmeldung</h3>
+      <p>Du meldest dich per E-Mail an. Danach sprechen wir die Termine miteinander ab,
+        passend zu deinem Alltag. Du kannst jede Lektion einzeln buchen und musst dich nicht
+        auf einmal für alle zehn entscheiden.</p>
+      <p>Jeder Teilnehmer erhält ausführliches Begleitmaterial.</p>
+      <div class="knopfzeile">
+        <a class="knopf" href="mailto:m.deck61@icloud.com?subject=Anmeldung%20Kurs%20%E2%80%9EBibel%20hebr%C3%A4isch%20verstehen%E2%80%9C&body=Guten%20Tag%20Herr%20Deck%2C%0A%0Aich%20m%C3%B6chte%20mich%20f%C3%BCr%20den%20Kurs%20%E2%80%9EBibel%20hebr%C3%A4isch%20verstehen%E2%80%9C%20anmelden.%0A%0AName%3A%0AGew%C3%BCnschte%20Lektion(en)%3A%0AMeine%20Zeiten%3A%0A">
+          Per E-Mail anmelden</a>
       </div>
     </div>
   </div>
@@ -415,6 +501,7 @@ footer a{color:#A99B89;text-decoration:none;}
 <!-- ================= KONTAKT ================= -->
 <section id="kontakt">
   <div class="bahn">
+    <div class="bildband"><img src="bilder/kontakt.jpg" alt="Zwei Stühle und Tee am Fenster" loading="lazy"></div>
     <div class="marke">Kontakt</div>
     <h2>Ein Gespräch. Mehr braucht es nicht für den Anfang.</h2>
     <div class="eng">
@@ -444,5 +531,39 @@ footer a{color:#A99B89;text-decoration:none;}
   </div>
 </footer>
 
+
+<!-- ================= POPUP KURS ================= -->
+<div class="popup" id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-titel" aria-hidden="true">
+  <div class="box">
+    <button class="zu" type="button" aria-label="Schließen">&times;</button>
+    <img src="bilder/kurs.jpg" alt="Ruhiger Schreibtisch mit hebräischer Bibel">
+    <div class="inh">
+      <div class="marke">Neu · Kurs per Zoom</div>
+      <h2 id="popup-titel">Bibel hebräisch verstehen</h2>
+      <p>10 Lektionen, live per Zoom: von der Einführung über das PaRDeS-Prinzip bis zu
+        Beispielen aus der Tora. Mit ausführlichem Begleitmaterial. Termine nach Absprache.</p>
+      <p class="preis">49 € je Lektion <span>inkl. MwSt. · 1 Stunde</span></p>
+      <div class="knopfzeile">
+        <a class="knopf" href="#kurs" data-zu>Mehr zum Kurs</a>
+        <a class="knopf hell" href="mailto:m.deck61@icloud.com?subject=Anmeldung%20Kurs%20%E2%80%9EBibel%20hebr%C3%A4isch%20verstehen%E2%80%9C">Anmelden</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var p=document.getElementById('popup'); if(!p) return;
+  var last=null;
+  function auf(){ last=document.activeElement; p.classList.add('offen'); p.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden'; p.querySelector('.zu').focus(); }
+  function zu(){ p.classList.remove('offen'); p.setAttribute('aria-hidden','true');
+    document.body.style.overflow=''; if(last&&last.focus) last.focus(); }
+  p.querySelector('.zu').addEventListener('click',zu);
+  p.addEventListener('click',function(e){ if(e.target===p) zu(); });
+  p.querySelectorAll('[data-zu]').forEach(function(a){ a.addEventListener('click',zu); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&p.classList.contains('offen')) zu(); });
+  setTimeout(auf,800);
+})();
+</script>
 </body>
 </html>
